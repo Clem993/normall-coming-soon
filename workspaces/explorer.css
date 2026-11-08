@@ -6,7 +6,7 @@
 .role-picker a { display: flex; align-items: center; gap: .6rem; min-height: 3.65rem; padding: .8rem .1rem .65rem; border-bottom: 3px solid transparent; color: var(--muted); font-size: .94rem; font-weight: 600; text-decoration: none; }
 .role-picker a:hover { color: var(--blue); border-color: var(--line); }
 .role-picker [aria-current], .role-picker [aria-current]:hover { color: var(--deep); border-color: var(--orange); }
-.role-picker .mark { flex-shrink: 0; height: .82rem; width: .82rem; }
+.role-picker .role-icon { flex-shrink: 0; width: 1.8rem; height: 1.8rem; }
 .explorer-content { border-top: 1px solid var(--line); background: white; }
 .workspace { padding-block: clamp(2rem, 3.4vw, 3.75rem); scroll-margin-top: 5rem; }
 .workspace-grid { display: grid; grid-template-columns: minmax(0, .93fr) minmax(0, 1.07fr); gap: clamp(2rem, 4.8vw, 5rem); align-items: start; }
@@ -42,6 +42,6 @@ select { display: block; width: 100%; min-height: 2.85rem; padding: .55rem .65re
 @media (max-width: 46rem) {
   .role-picker { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: .9rem; }
   .role-picker a { gap: .45rem; min-height: 2.85rem; padding-block: .62rem .5rem; font-size: .88rem; line-height: 1.4; }
-  .role-picker .mark { height: .66rem; width: .66rem; }
+  .role-picker .role-icon { width: 1.45rem; height: 1.45rem; }
   .agenda li { grid-template-columns: 3.4rem 1fr; }
 }
