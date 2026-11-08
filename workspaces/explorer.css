@@ -1,7 +1,7 @@
 [hidden] { display: none !important; }
 .explorer-intro { padding-block: clamp(2.3rem, 3.8vw, 3.7rem); background: var(--deep); color: white; }
 .explorer-intro h1 { font-size: clamp(2.25rem, 4.1vw, 4.05rem); }
-.explorer-intro p { margin-top: .75rem; font-size: 1.05rem; }
+.explorer-intro p { font-family: var(--heading); font-weight: 400; margin-top: .75rem; font-size: 1.05rem; }
 .role-picker { display: flex; flex-wrap: wrap; gap: 0 clamp(1.1rem, 2.8vw, 2.7rem); }
 .role-picker a { display: flex; align-items: center; gap: .6rem; min-height: 3.65rem; padding: .8rem .1rem .65rem; border-bottom: 3px solid transparent; color: var(--muted); font-size: .94rem; font-weight: 600; text-decoration: none; }
 .role-picker a:hover { color: var(--blue); border-color: var(--line); }
@@ -13,12 +13,15 @@
 .workspace-grid > div:first-child { padding-right: clamp(1.5rem, 3.25vw, 3rem); border-right: 1px solid var(--line); }
 .workspace h2 { color: var(--deep); font-size: clamp(1.9rem, 2.7vw, 2.75rem); }
 .workspace h2:focus:not(:focus-visible) { outline: none; }
-.role-summary { margin: .8rem 0 1.2rem; font-size: 1.04rem; }
+.role-summary { font-family: var(--heading); font-weight: 400; margin: .8rem 0 1.2rem; font-size: 1.04rem; }
 .tool-list, .tool-list dd { margin: 0; }
 .tool-list > div { padding-block: .85rem; border-top: 1px solid var(--line); }
 .tool-list dt { color: var(--deep); font-family: var(--heading); font-weight: 600; }
 .tool-list dd { margin-top: .3rem; color: var(--muted); }
-.preview { padding: clamp(1.2rem, 2.6vw, 2.35rem); background: var(--teal-wash); border-left: 4px solid var(--orange); }
+.workspace { --preview-tint: var(--teal-wash); }
+#managers { --preview-tint: var(--peach-wash); }
+#colleagues, #hr { --preview-tint: var(--field); }
+.preview { padding: clamp(1.2rem, 2.6vw, 2.35rem); background: var(--preview-tint); border-left: 4px solid var(--orange); }
 .preview h3 { color: var(--deep); font-size: clamp(1.45rem, 2.05vw, 2rem); margin: .65rem 0 .7rem; }
 .preview-intro { margin-bottom: 1.2rem; }
 .choice-label { display: block; color: var(--deep); font-size: .92rem; font-weight: 650; margin-bottom: .35rem; }
