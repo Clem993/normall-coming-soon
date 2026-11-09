@@ -8,8 +8,8 @@
   <link rel="canonical" href="https://normall.io/workspaces/">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/normall-symbol.png">
   <link rel="stylesheet" href="/site.css?v=4">
-  <link rel="stylesheet" href="/workspaces/explorer.css?v=4">
-  <script src="/workspaces/explorer.js" defer></script>
+  <link rel="stylesheet" href="/workspaces/explorer.css?v=5">
+  <script src="/workspaces/explorer.js?v=5" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -36,29 +36,204 @@
     </div>
     <div class="explorer-content"><div class="wrap">
       <section class="workspace" id="professionals" aria-labelledby="professionals-title">
-        <div class="workspace-grid">
-          <div>
+        <div class="workspace-grid professional-grid">
+          <div class="professional-intro">
             <h2 id="professionals-title" tabindex="-1">Neurodivergent professionals</h2>
-            <p class="role-summary">Plan work around your energy, turn a task into manageable steps, and choose how to explain your working preferences.</p>
+            <p class="role-summary">Choose what would help with the work in front of you, whether that is finding a first step, protecting time to concentrate, or preparing for a conversation.</p>
+          </div>
+          <div class="preview professional-preview">
+            <h3>Try the professional workspace</h3>
+            <fieldset class="topic-picker" hidden>
+              <legend>Choose an example</legend>
+              <div class="topic-options">
+                <label><input type="radio" name="professional-topic" value="topic-guidance" aria-controls="topic-guidance" checked><span>Workplace guidance</span></label>
+                <label><input type="radio" name="professional-topic" value="topic-task" aria-controls="topic-task"><span>Start a task</span></label>
+                <label><input type="radio" name="professional-topic" value="topic-energy" aria-controls="topic-energy"><span>Plan around energy</span></label>
+                <label><input type="radio" name="professional-topic" value="topic-carry" aria-controls="topic-carry"><span>Replan unfinished work</span></label>
+                <label><input type="radio" name="professional-topic" value="topic-messages" aria-controls="topic-messages"><span>Draft a message</span></label>
+                <label><input type="radio" name="professional-topic" value="topic-preferences" aria-controls="topic-preferences"><span>Share working preferences</span></label>
+              </div>
+            </fieldset>
+            <section id="topic-guidance" class="topic-panel" aria-labelledby="topic-guidance-title">
+              <h4 id="topic-guidance-title">Find a starting point for a workplace situation</h4>
+              <p>Choose a situation to see a practical next step and wording you could use.</p>
+              <div class="choice" hidden>
+                <label class="choice-label" for="guidance-choice">Choose a situation</label>
+                <select id="guidance-choice" aria-controls="guidance-examples">
+                  <option value="guidance-workload">Workload and overwhelm</option>
+                  <option value="guidance-change">Unexpected change</option>
+                  <option value="guidance-conversation">A difficult conversation</option>
+                  <option value="guidance-focus">Focus and distractions</option>
+                  <option value="guidance-setback">After a setback</option>
+                  <option value="guidance-support">Asking for support</option>
+                  <option value="guidance-meeting">Meeting preparation</option>
+                  <option value="guidance-time">Time and deadlines</option>
+                  <option value="guidance-routine">Building a routine</option>
+                  <option value="guidance-other">Another workplace situation</option>
+                </select>
+              </div>
+              <div id="guidance-examples" aria-live="polite">
+                <div id="guidance-workload" class="example-output">
+                  <h5>When two requests both come first</h5>
+                  <p>A colleague asks for slides by midday while you are finishing a report due at the same time.</p><p><strong>A starting point.</strong> Write down what you can finish by midday and who can decide which piece moves. Ask for that decision before trying to do both.</p><p class="sample-wording">“I can send the report or the slides by midday. Which one does the team need first?”</p>
+                </div>
+                <div id="guidance-change" class="example-output">
+                  <h5>When the brief changes halfway through</h5>
+                  <p>You have drafted a briefing for the project team. It now needs to go to the board.</p><p><strong>A starting point.</strong> Separate what you can reuse from what needs a decision. Keep the figures you have checked and ask what the new audience needs to decide.</p><p class="sample-wording">“I can reuse the analysis. What decision does the board need from this paper, and is Thursday still the deadline?”</p>
+                </div>
+                <div id="guidance-conversation" class="example-output">
+                  <h5>Prepare a specific request</h5>
+                  <p>Two deadlines moved in meetings you did not attend. You want to raise this with your manager.</p><p><strong>A starting point.</strong> Pick one instance and describe its effect. Ask how the change was communicated, then agree where future changes will be recorded.</p><p class="sample-wording">“I was working to Friday because that was the date in the brief. How did the new date reach the team? Could we update the brief when a deadline moves?”</p>
+                </div>
+                <div id="guidance-focus" class="example-output">
+                  <h5>Leave yourself a way back into the task</h5>
+                  <p>Messages keep interrupting you while you check a spreadsheet.</p><p><strong>A starting point.</strong> Choose one check, agree where urgent questions should go, and write down where you stopped before switching away.</p><p class="sample-wording">Restart note: “Rows 1 to 12 checked. Next, compare row 13 with the source invoice.”</p>
+                </div>
+                <div id="guidance-setback" class="example-output">
+                  <h5>Work out what can be repaired</h5>
+                  <p>You discover an old figure in a briefing you have already circulated.</p><p><strong>A starting point.</strong> Identify the figure, check whether it changes the recommendation, and tell the people relying on it what you will correct and when.</p><p class="sample-wording">“The total on page two came from last month’s file. I am checking the recommendation and will send a corrected version by 11:00.”</p>
+                </div>
+                <div id="guidance-support" class="example-output">
+                  <h5>Propose a change you can try</h5>
+                  <p>Decisions come quickly at a weekly meeting, and you have more to contribute once you have reviewed the papers.</p><p><strong>A starting point.</strong> Describe the barrier, suggest one change, and agree when to review it. You can explain what helps without sharing a diagnosis.</p><p class="sample-wording">“Could we circulate the questions the day before the next two meetings? Then I can check the figures and bring a considered response.”</p>
+                </div>
+                <div id="guidance-meeting" class="example-output">
+                  <h5>Make room for the point you want to raise</h5>
+                  <p>A meeting invite says “project update”, and you are unsure what to prepare.</p><p><strong>A starting point.</strong> Ask which decision is needed. Once you know, jot down the evidence and one question you want to bring.</p><p class="sample-wording">“Are we choosing a supplier or reviewing progress? If we are choosing, I will bring the cost comparison.”</p>
+                </div>
+                <div id="guidance-time" class="example-output">
+                  <h5>Include the work after the first draft</h5>
+                  <p>You have been asked to send a finished paper on Friday and a colleague needs time to review it.</p><p><strong>A starting point.</strong> Work back from Friday to allow for the review and revisions. Use time tracked on similar work to estimate the first draft.</p><p class="sample-wording">“If I get the draft to you on Wednesday, could you return comments by Thursday lunchtime?”</p>
+                </div>
+                <div id="guidance-routine" class="example-output">
+                  <h5>Attach one action to an existing event</h5>
+                  <p>You often leave a meeting knowing your next action, then lose it when another call starts.</p><p><strong>A starting point.</strong> Try adding one action to your task list as you close the meeting notes. After a few meetings, check whether that cue works for you.</p><p class="sample-wording">Example task: “Email Priya the revised figures by Thursday at 10:00.”</p>
+                </div>
+                <div id="guidance-other" class="example-output">
+                  <h5>Choose one question that reduces uncertainty</h5>
+                  <p>You have been added to a project channel and cannot tell whether anyone needs something from you.</p><p><strong>A starting point.</strong> Write down what you know, what is unclear, and who can answer. Use their response to decide whether to add a task.</p><p class="sample-wording">“Am I here to follow progress, or is there a particular decision you would like my input on?”</p>
+                </div>
+              </div>
+            </section>
+            <section id="topic-task" class="topic-panel" aria-labelledby="topic-task-title">
+              <h4 id="topic-task-title">Break down a handover</h4>
+              <p>You are going on leave tomorrow. “Prepare the handover” is on your list, but it is difficult to tell where to begin. Try ticking off these example steps.</p>
+              <ul class="steps sample-steps"><li><label><input type="checkbox"><span>Open the handover document and write the project name.</span></label></li><li><label><input type="checkbox"><span>Add the next deadline and what is due.</span></label></li><li><label><input type="checkbox"><span>List the outstanding decision and who can make it.</span></label></li><li><label><input type="checkbox"><span>Link the latest working file.</span></label></li><li><label><input type="checkbox"><span>Write the one thing your colleague should do first.</span></label></li></ul>
+              <p class="example-note">In the prototype, you can edit the steps, add your own, or place one step at a time in your timetable.</p>
+            </section>
+            <section id="topic-energy" class="topic-panel" aria-labelledby="topic-energy-title">
+              <h4 id="topic-energy-title">Plan a report around a fixed meeting</h4>
+              <p>You need to draft a report and check its references. Your 11:00 meeting is fixed. Choose when focused work tends to feel easier and compare the two timetables.</p>
+              <div class="choice" hidden>
+                <label class="choice-label" for="professionals-choice">When is focused work easier?</label>
+                <select id="professionals-choice" aria-controls="professionals-examples">
+                  <option value="professionals-am">In the morning</option>
+                  <option value="professionals-pm">In the afternoon</option>
+                </select>
+              </div>
+              <div id="professionals-examples" aria-live="polite">
+                <div id="professionals-am" class="example-output">
+                  <h5>Morning focus</h5>
+                  <ul class="agenda"><li><time>09:30</time><span>Draft the recommendations while your energy is higher.</span></li><li><time>11:00</time><span>Team meeting (fixed).</span></li><li><time>14:00</time><span>Check the references and tidy the document.</span></li></ul>
+                </div>
+                <div id="professionals-pm" class="example-output">
+                  <h5>Afternoon focus</h5>
+                  <ul class="agenda"><li><time>09:30</time><span>Check the references and tidy the document.</span></li><li><time>11:00</time><span>Team meeting (fixed).</span></li><li><time>14:00</time><span>Draft the recommendations while your energy is higher.</span></li></ul>
+                </div>
+              </div>
+            </section>
+            <section id="topic-carry" class="topic-panel" aria-labelledby="topic-carry-title">
+              <h4 id="topic-carry-title">Pick up a task after an interruption</h4>
+              <p>A call ran over and you missed a planned slot. You have checked the spending figures for your report. Writing the explanation is still open.</p>
+              <div class="choice" hidden>
+                <label class="choice-label" for="carry-choice">When would you like to pick it up?</label>
+                <select id="carry-choice" aria-controls="carry-examples">
+                  <option value="carry-today">Later today</option>
+                  <option value="carry-tomorrow">Tomorrow</option>
+                </select>
+              </div>
+              <div id="carry-examples" aria-live="polite">
+                <div id="carry-today" class="example-output">
+                  <h5>Keep a smaller step for today</h5>
+                  <p>You have 20 minutes before the end of the day. Move “Explain the largest change in spending” into that slot. Leave proofreading as a separate step.</p><p><strong>Restart note.</strong> The largest increase is in travel costs. The figures are checked. Start with the reason for the change.</p>
+                </div>
+                <div id="carry-tomorrow" class="example-output">
+                  <h5>Protect time for the unfinished step</h5>
+                  <p>Move the explanation to a free slot tomorrow morning. Keep the figures marked as checked so you can pick up where you stopped.</p><p><strong>If someone is waiting.</strong> “The figures are ready today. I can send them now and follow with the explanation tomorrow morning. Does that work for you?”</p>
+                </div>
+              </div>
+            </section>
+            <section id="topic-messages" class="topic-panel" aria-labelledby="topic-messages-title">
+              <h4 id="topic-messages-title">Find the words for a work conversation</h4>
+              <p>Choose the conversation you need to have, then adapt the sample wording. Edits stay on this page.</p>
+              <div class="choice" hidden>
+                <label class="choice-label" for="draft-choice">Message template</label>
+                <select id="draft-choice" aria-controls="draft-examples">
+                  <option value="draft-clarify">Clarify a request</option>
+                  <option value="draft-priorities">Discuss competing priorities</option>
+                  <option value="draft-adjust">Ask for a working adjustment</option>
+                  <option value="draft-meeting">Prepare for a meeting</option>
+                  <option value="draft-deadline">Renegotiate a deadline</option>
+                  <option value="draft-followup">Confirm what was agreed</option>
+                </select>
+              </div>
+              <div id="draft-examples" aria-live="polite">
+                <div id="draft-clarify" class="example-output">
+                  <h5>Find out what is needed</h5>
+                  <p>A teammate asks you to “look at” a draft before a meeting.</p>
+                <label class="choice-label draft-label" for="draft-text-clarify">Edit the example message</label>
+                <textarea id="draft-text-clarify" rows="5" spellcheck="true">I can look at the draft before the meeting. Would you like me to check the figures or give feedback on the recommendation?</textarea>
+                </div>
+                <div id="draft-priorities" class="example-output">
+                  <h5>Ask which deadline takes precedence</h5>
+                  <p>Your manager adds a new task while you are finishing a client summary.</p>
+                <label class="choice-label draft-label" for="draft-text-priorities">Edit the example message</label>
+                <textarea id="draft-text-priorities" rows="5" spellcheck="true">I am finishing the client summary this morning. If the slide deck needs to come first, I can move the summary to tomorrow. Which should I prioritise?</textarea>
+                </div>
+                <div id="draft-adjust" class="example-output">
+                  <h5>Suggest a specific trial</h5>
+                  <p>Switching between chat messages and analysis makes it hard to keep track of what you have checked.</p>
+                <label class="choice-label draft-label" for="draft-text-adjust">Edit the example message</label>
+                <textarea id="draft-text-adjust" rows="5" spellcheck="true">Could I try two uninterrupted mornings for the analysis next week? I can check messages at midday, and the team can call if something is urgent. Could we review how it worked on Friday?</textarea>
+                </div>
+                <div id="draft-meeting" class="example-output">
+                  <h5>Ask for the information you need</h5>
+                  <p>You would like to consider the options before a decision meeting.</p>
+                <label class="choice-label draft-label" for="draft-text-meeting">Edit the example message</label>
+                <textarea id="draft-text-meeting" rows="5" spellcheck="true">Could you send the options and the decision we need to make before Thursday? I would like to check the figures and bring my questions.</textarea>
+                </div>
+                <div id="draft-deadline" class="example-output">
+                  <h5>Offer a deliverable and a realistic date</h5>
+                  <p>One source has arrived late, leaving less time to check the full analysis.</p>
+                <label class="choice-label draft-label" for="draft-text-deadline">Edit the example message</label>
+                <textarea id="draft-text-deadline" rows="5" spellcheck="true">I can send the checked figures by 15:00 today. With the new file, the commentary will be ready tomorrow morning. Would you prefer the figures today or the complete paper tomorrow?</textarea>
+                </div>
+                <div id="draft-followup" class="example-output">
+                  <h5>Put the next action in writing</h5>
+                  <p>You and a colleague have agreed a handover in a call.</p>
+                <label class="choice-label draft-label" for="draft-text-followup">Edit the example message</label>
+                <textarea id="draft-text-followup" rows="5" spellcheck="true">My understanding is that I will send the figures by Thursday at 10:00 and you will add the commentary before Friday. Have I captured that correctly?</textarea>
+                </div>
+              </div>
+            </section>
+            <section id="topic-preferences" class="topic-panel" aria-labelledby="topic-preferences-title">
+              <h4 id="topic-preferences-title">Choose what a colleague needs to know</h4>
+              <p>You are joining a project team. Choose which example preferences you would include in a note to the project lead.</p>
+              <fieldset class="preference-options" hidden><legend>Include in the example note</legend><label><input type="checkbox" value="pref-communication" checked><span>Communication</span></label><label><input type="checkbox" value="pref-meetings"><span>Meetings</span></label><label><input type="checkbox" value="pref-focus"><span>Focus and environment</span></label><label><input type="checkbox" value="pref-support"><span>Support that helps</span></label></fieldset>
+              <div class="preference-note example-output">
+              <h5>My working preferences</h5>
+              <ul aria-live="polite"><li id="pref-communication">When a deadline changes, please update the written brief so I can plan from the latest date.</li><li id="pref-meetings">I can give a more considered answer if I have the decision questions before the meeting.</li><li id="pref-focus">For concentrated work, a quiet hour helps. If a question is urgent, please call instead of messaging.</li><li id="pref-support">When priorities change, a short check-in helps me agree what can move.</li><li class="empty-pref" hidden>Select a preference to include it in the note.</li></ul>
+              </div>
+            </section>
+          </div>
+          <div class="professional-tools">
             <dl class="tool-list">
-              <div><dt>Tasks and timetable</dt><dd>Write your own steps or ask AI to suggest a breakdown. Place individual steps in your timetable, move them around fixed commitments, and choose when to carry unfinished work forward.</dd></div>
-<div><dt>Energy check-ins</dt><dd>Record how your energy changes during the day. Use the pattern alongside your deadlines when deciding where to put demanding work.</dd></div>
-<div><dt>Communication and working preferences</dt><dd>Adapt a message template, save a private draft, or select which working preferences to include in a copy you share.</dd></div>
+              <div><dt>Workplace guidance</dt><dd>Find a practical starting point for ten situations, including workload overwhelm, unexpected change, and asking for support. In the prototype, you can also request personalised guidance and save a response to revisit.</dd></div>
+              <div><dt>Tasks, timetable, and energy</dt><dd>Write steps yourself or ask AI to suggest them. Use energy check-ins and fixed commitments to plan your day, track time spent, and choose when to carry unfinished work forward.</dd></div>
+              <div><dt>Communication</dt><dd>Start with an editable message, from asking what a request involves to renegotiating a deadline. In the prototype, you can save a private draft or ask AI to suggest a rewrite.</dd></div>
+              <div><dt>Working preferences</dt><dd>Describe what helps with meetings, communication, and focused work. Choose which details to include when you export a copy.</dd></div>
             </dl>
             <a class="role-demo" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry%20%7C%20Neurodivergent%20professionals">Request a demo of this workspace</a>
-          </div>
-          <div class="preview">
-            <p class="preview-label">Interactive example</p>
-            <h3>Plan a report around a fixed meeting</h3>
-            <p class="preview-intro">You need to draft a report and check its references. Your team meeting is fixed at 11:00. Choose when you find it easier to concentrate and compare the two example timetables.</p>
-            <div class="choice" hidden>
-              <label class="choice-label" for="professionals-choice">When is focused work easier?</label>
-              <select id="professionals-choice" aria-controls="professionals-examples"><option value="professionals-am">In the morning</option><option value="professionals-pm">In the afternoon</option></select>
-            </div>
-            <div aria-live="polite" id="professionals-examples">
-              <div id="professionals-am" class="example-output"><h4>Morning focus</h4><ul class="agenda"><li><time>09:30</time><span>Draft the recommendations while your energy is higher.</span></li><li><time>11:00</time><span>Team meeting (fixed).</span></li><li><time>14:00</time><span>Check the references and tidy the document.</span></li></ul></div>
-<div id="professionals-pm" class="example-output"><h4>Afternoon focus</h4><ul class="agenda"><li><time>09:30</time><span>Check the references and tidy the document.</span></li><li><time>11:00</time><span>Team meeting (fixed).</span></li><li><time>14:00</time><span>Draft the recommendations while your energy is higher.</span></li></ul></div>
-            </div>
           </div>
         </div>
       </section>

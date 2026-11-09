@@ -33,17 +33,45 @@ window.addEventListener('popstate', restoreWorkspace);
 window.addEventListener('pageshow', restoreWorkspace);
 restoreWorkspace();
 
-// All worked examples are available in the HTML. The selector narrows each
-// preview to the situation the visitor chooses.
-for (const preview of document.querySelectorAll('.preview')) {
-  const control = preview.querySelector('.choice');
+// Start with every example visible in the HTML, then enable the controls.
+for (const control of document.querySelectorAll('.choice')) {
   const select = control.querySelector('select');
-  const examples = preview.querySelectorAll('.example-output');
+  const results = document.getElementById(select.getAttribute('aria-controls'));
   function showExample() {
-    for (const example of examples) example.hidden = example.id !== select.value;
+    for (const example of results.children) example.hidden = example.id !== select.value;
   }
   showExample();
   control.hidden = false;
   select.addEventListener('change', showExample);
   window.addEventListener('pageshow', showExample);
+}
+
+const professionalPreview = document.querySelector('.professional-preview');
+if (professionalPreview) {
+  const topicPicker = professionalPreview.querySelector('.topic-picker');
+  const topicPanels = professionalPreview.querySelectorAll('.topic-panel');
+
+  function showTopic() {
+    const selected = topicPicker.querySelector('input:checked').value;
+    for (const panel of topicPanels) panel.hidden = panel.id !== selected;
+  }
+  showTopic();
+  topicPicker.hidden = false;
+  topicPicker.addEventListener('change', showTopic);
+  window.addEventListener('pageshow', showTopic);
+
+  const preferenceOptions = document.querySelector('.preference-options');
+  const preferenceInputs = preferenceOptions.querySelectorAll('input');
+  const emptyNote = document.querySelector('.empty-pref');
+
+  function updatePreferenceNote() {
+    for (const input of preferenceInputs) {
+      document.getElementById(input.value).hidden = !input.checked;
+    }
+    emptyNote.hidden = Boolean(preferenceOptions.querySelector('input:checked'));
+  }
+  updatePreferenceNote();
+  preferenceOptions.hidden = false;
+  preferenceOptions.addEventListener('change', updatePreferenceNote);
+  window.addEventListener('pageshow', updatePreferenceNote);
 }
