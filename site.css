@@ -73,22 +73,21 @@ h1 { font-size: clamp(2.45rem, 4.25vw, 4.25rem); letter-spacing: -.048em; line-h
 .role-picker a:focus-visible { outline-offset: -3px; }
 .role-picker [aria-current] { border-color: var(--orange); color: var(--deep); }
 .role-icon { width: 1.7rem; height: 1.7rem; flex: none; object-fit: contain; }
-.workspaces, .workspace { padding-block: clamp(2.35rem, 3.6vw, 4rem); }
+.workspaces { padding-block: clamp(2.75rem, 5vw, 5rem); }
+.workspaces .section-opening, .workspaces .role-grid { max-width: 48rem; }
+.workspace { padding-block: clamp(2.35rem, 3.6vw, 4rem); }
 .section-title, .workspace h2 { color: var(--ink); font-size: clamp(2rem, 3.1vw, 3rem); font-weight: 700; letter-spacing: -.043em; }
 .section-opening { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: .4rem 1rem; margin-bottom: 1.7rem; }
 .text-link, .contact-link, .role-demo { width: fit-content; font-size: .94rem; font-weight: 650; }
 .arrow { display: inline-block; width: .54em; height: .54em; position: relative; border-top: .11em solid; border-right: .11em solid; vertical-align: .15em; margin-left: .22em; }
 .arrow::before { content: ""; position: absolute; right: -.025em; top: -.085em; width: .68em; border-top: .11em solid; transform-origin: right center; transform: rotate(-45deg); }
-.home-columns { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
 .role-grid { border-bottom: 1px solid var(--line); }
-.role { display: grid; grid-template-columns: 2rem minmax(0,1fr); gap: .75rem; border-top: 1px solid var(--line); padding-block: 1rem; }
+.role { display: grid; grid-template-columns: 2rem minmax(0,1fr); gap: .75rem; border-top: 1px solid var(--line); padding-block: clamp(1rem, 1.8vw, 1.45rem); }
 .role .role-icon { width: 1.9rem; height: 1.9rem; }
 .role h3 { font-size: 1.12rem; line-height: 1.4; font-weight: 600; }
 .role h3 a { color: var(--deep); text-decoration-thickness: 1px; text-decoration-color: #9aaeb9; }
 .role p { margin-top: .2rem; color: var(--muted); font-size: .95rem; }
-.example { padding-left: clamp(1.35rem, 2.7vw, 2.7rem); border-left: 1px solid var(--line); }
-.example-label, .preview-label { font: 600 .76rem/1.45 var(--heading); letter-spacing: .105em; text-transform: uppercase; color: var(--blue); }
-.example h3 { font-size: clamp(1.5rem, 2.25vw, 2rem); margin-block: .5rem 1.25rem; color: var(--ink); }
+.preview-label { font: 600 .76rem/1.45 var(--heading); letter-spacing: .105em; text-transform: uppercase; color: var(--blue); }
 .steps { list-style: none; padding: 0; border-top: 1px solid var(--line); }
 .steps li { border-bottom: 1px solid var(--line); }
 .steps label, .preference-options label { display: flex; align-items: center; gap: .75rem; padding-block: .68rem; min-height: 2.8rem; cursor: pointer; }
@@ -103,8 +102,6 @@ h1 { font-size: clamp(2.45rem, 4.25vw, 4.25rem); letter-spacing: -.048em; line-h
 footer { border-top: 1px solid var(--line); color: var(--muted); }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-block: 1.1rem; font-size: .88rem; }
 @media (max-width: 52rem) {
-  .home-columns { grid-template-columns: 1fr; gap: 1.8rem; }
-  .example { border-left: 0; padding: 0; }
   .contact-inner { flex-direction: column; align-items: start; gap: .75rem; }
 }
 @media (max-width: 60rem) {
