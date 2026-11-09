@@ -7,16 +7,16 @@
   <meta name="description" content="Try examples from four normALL workspaces, from planning a day around your energy to preparing an inclusive hiring pack.">
   <link rel="canonical" href="https://normall.io/workspaces/">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/normall-symbol.png">
-  <link rel="stylesheet" href="/site.css?v=4">
-  <link rel="stylesheet" href="/workspaces/explorer.css?v=5">
-  <script src="/workspaces/explorer.js?v=5" defer></script>
+  <link rel="stylesheet" href="/site.css?v=6">
+  <link rel="stylesheet" href="/workspaces/explorer.css?v=6">
+  <script src="/workspaces/explorer.js?v=6" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="normALL home"><img src="/assets/normall-horizontal.webp" width="550" height="173" alt="normALL"></a>
-      <nav class="header-links" aria-label="Main navigation"><a href="/">Home</a><a href="/#contact">Contact</a></nav>
+      <nav class="header-links" aria-label="Main navigation"><a href="/#contact">Contact</a><a class="button" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry">Request a demo</a></nav>
     </div>
   </header>
   <main id="main">
@@ -26,15 +26,16 @@
         <p>Choose a role to see its tools and try a worked example.</p>
       </div>
     </div>
-    <div class="wrap">
-      <nav class="role-picker" aria-label="Choose a workspace">
+    <div class="workspace-nav"><div class="wrap">
+      <nav class="role-picker" aria-label="Workspaces">
+        <a href="/"><img class="role-icon" src="/assets/normall-symbol.png" width="96" height="96" alt="">Overview</a>
 <a href="#professionals"><img class="role-icon" src="/assets/workspaces/professional.png" width="128" height="128" alt="">Neurodivergent professionals</a>
 <a href="#managers"><img class="role-icon" src="/assets/workspaces/manager.png" width="128" height="128" alt="">Managers</a>
 <a href="#colleagues"><img class="role-icon" src="/assets/workspaces/colleague.png" width="128" height="128" alt="">Colleagues</a>
 <a href="#hr"><img class="role-icon" src="/assets/workspaces/hr.png" width="128" height="128" alt="">HR and People teams</a>
       </nav>
-    </div>
-    <div class="explorer-content"><div class="wrap">
+    </div></div>
+    <div class="explorer-content"><div class="wrap page-view">
       <section class="workspace" id="professionals" aria-labelledby="professionals-title">
         <div class="workspace-grid professional-grid">
           <div class="professional-intro">
@@ -42,7 +43,7 @@
             <p class="role-summary">Choose what would help with the work in front of you, whether that is finding a first step, protecting time to concentrate, or preparing for a conversation.</p>
           </div>
           <div class="preview professional-preview">
-            <h3>Try the professional workspace</h3>
+            <h3 class="visually-hidden">Try the professional workspace</h3>
             <fieldset class="topic-picker" hidden>
               <legend>Choose an example</legend>
               <div class="topic-options">
@@ -54,6 +55,7 @@
                 <label><input type="radio" name="professional-topic" value="topic-preferences" aria-controls="topic-preferences"><span>Share working preferences</span></label>
               </div>
             </fieldset>
+            <div class="topic-detail">
             <section id="topic-guidance" class="topic-panel" aria-labelledby="topic-guidance-title">
               <h4 id="topic-guidance-title">Find a starting point for a workplace situation</h4>
               <p>Choose a situation to see a practical next step and wording you could use.</p>
@@ -225,8 +227,10 @@
               <ul aria-live="polite"><li id="pref-communication">When a deadline changes, please update the written brief so I can plan from the latest date.</li><li id="pref-meetings">I can give a more considered answer if I have the decision questions before the meeting.</li><li id="pref-focus">For concentrated work, a quiet hour helps. If a question is urgent, please call instead of messaging.</li><li id="pref-support">When priorities change, a short check-in helps me agree what can move.</li><li class="empty-pref" hidden>Select a preference to include it in the note.</li></ul>
               </div>
             </section>
+            </div>
           </div>
           <div class="professional-tools">
+            <h3>Tools in this workspace</h3>
             <dl class="tool-list">
               <div><dt>Workplace guidance</dt><dd>Find a practical starting point for ten situations, including workload overwhelm, unexpected change, and asking for support. In the prototype, you can also request personalised guidance and save a response to revisit.</dd></div>
               <div><dt>Tasks, timetable, and energy</dt><dd>Write steps yourself or ask AI to suggest them. Use energy check-ins and fixed commitments to plan your day, track time spent, and choose when to carry unfinished work forward.</dd></div>
@@ -239,9 +243,12 @@
       </section>
       <section class="workspace" id="managers" aria-labelledby="managers-title">
         <div class="workspace-grid">
-          <div>
+          <div class="workspace-intro">
             <h2 id="managers-title" tabindex="-1">Managers</h2>
             <p class="role-summary">Prepare clearer requests and meetings, then try a change with your team and record whether it helped.</p>
+          </div>
+          <div class="workspace-tools">
+            <h3>Tools in this workspace</h3>
             <dl class="tool-list">
               <div><dt>Team Resources</dt><dd>Find guidance on meetings, feedback, and working agreements. Adapt a template to spell out the outcome you need, its priority, the deadline, and where questions can go.</dd></div>
 <div><dt>Team Practices</dt><dd>Create a private plan for a change, such as circulating the decisions needed before a meeting. Record what you will try, when you will review it, and how you will judge whether it helped.</dd></div>
@@ -270,9 +277,12 @@
       </section>
       <section class="workspace" id="colleagues" aria-labelledby="colleagues-title">
         <div class="workspace-grid">
-          <div>
+          <div class="workspace-intro">
             <h2 id="colleagues-title" tabindex="-1">Colleagues</h2>
             <p class="role-summary">Find words for everyday conversations, clarify an ambiguous request, or try a small change in how you work with someone.</p>
+          </div>
+          <div class="workspace-tools">
+            <h3>Tools in this workspace</h3>
             <dl class="tool-list">
               <div><dt>Situation guides</dt><dd>Start with a situation you recognise, such as an unclear handover. Find practical wording, bookmark a guide, and record a private next action.</dd></div>
 <div><dt>Communication templates</dt><dd>Adapt the wording to the recipient and what you need from them. Save a draft, then copy or download the version you want to use.</dd></div>
@@ -298,9 +308,12 @@
       </section>
       <section class="workspace" id="hr" aria-labelledby="hr-title">
         <div class="workspace-grid">
-          <div>
+          <div class="workspace-intro">
             <h2 id="hr-title" tabindex="-1">HR and People teams</h2>
             <p class="role-summary">Prepare materials for inclusive hiring and workplace support, with a record of what is ready for review and what still needs work.</p>
+          </div>
+          <div class="workspace-tools">
+            <h3>Tools in this workspace</h3>
             <dl class="tool-list">
               <div><dt>Policies and guidance</dt><dd>Start with a policy template or workplace support guide. Adapt the wording to your organisation, keep a private draft, and export it for review.</dd></div>
 <div><dt>Inclusive hiring packs</dt><dd>Prepare six stages, from the role brief to onboarding handover. Check each section and export the parts your recruiting team needs.</dd></div>

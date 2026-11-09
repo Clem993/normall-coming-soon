@@ -1,6 +1,6 @@
 // Role links point to the same sections when JavaScript is unavailable.
 const picker = document.querySelector('.role-picker');
-const roleLinks = Array.from(picker.querySelectorAll('a'));
+const roleLinks = Array.from(picker.querySelectorAll('a[href^="#"]'));
 const workspaces = Array.from(document.querySelectorAll('.workspace'));
 
 function showWorkspace(id, moveFocus = false) {
