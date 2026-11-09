@@ -97,6 +97,8 @@ h1 { font-size: clamp(2.45rem, 4.25vw, 4.25rem); letter-spacing: -.048em; line-h
 .steps input, .preference-options input { width: 1.08rem; height: 1.08rem; margin: 0; flex: none; accent-color: var(--deep); }
 .steps input:checked + span { text-decoration: line-through; color: var(--muted); }
 .example-note { background: var(--teal-wash); color: var(--ink); margin-top: 1rem; padding: .9rem 1rem; font-size: .9rem; line-height: 1.6; }
+.founder { padding-bottom: clamp(2.75rem, 5vw, 5rem); }
+.founder p { max-width: 48rem; margin-top: 1rem; }
 .contact { padding-bottom: clamp(2rem, 3vw, 3rem); }
 .contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem 2rem; padding: clamp(1.2rem, 2.1vw, 2rem); background: var(--teal-wash); }
 .contact h2 { font-size: clamp(1.35rem, 1.8vw, 1.8rem); }
