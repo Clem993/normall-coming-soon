@@ -97,13 +97,18 @@ h1 { font-size: clamp(2.45rem, 4.25vw, 4.25rem); letter-spacing: -.048em; line-h
 .steps input, .preference-options input { width: 1.08rem; height: 1.08rem; margin: 0; flex: none; accent-color: var(--deep); }
 .steps input:checked + span { text-decoration: line-through; color: var(--muted); }
 .example-note { background: var(--teal-wash); color: var(--ink); margin-top: 1rem; padding: .9rem 1rem; font-size: .9rem; line-height: 1.6; }
-.founder { padding-bottom: clamp(2.75rem, 5vw, 5rem); }
+.founder { padding-block: clamp(2.75rem, 5vw, 5rem) clamp(2rem, 3vw, 3rem); }
 .founder p { max-width: 48rem; margin-top: 1rem; }
 .contact { padding-bottom: clamp(2rem, 3vw, 3rem); }
 .contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem 2rem; padding: clamp(1.2rem, 2.1vw, 2rem); background: var(--teal-wash); }
 .contact h2 { font-size: clamp(1.35rem, 1.8vw, 1.8rem); }
 .contact p { max-width: 65ch; margin-top: .5rem; }
 .contact-link { white-space: nowrap; }
+.company { padding-bottom: clamp(2.75rem, 5vw, 5rem); }
+.company h2 { max-width: 48rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: clamp(1.35rem, 2.2vw, 1.8rem); }
+.company p { max-width: 48rem; margin-top: .65rem; }
+.about-icon { display: inline-grid; place-items: center; flex: none; width: 1.45rem; height: 1.45rem; border: 2px solid var(--deep); border-radius: 50%; background: var(--teal-wash); color: var(--deep); font: 700 1rem/1 var(--heading); }
+.footer-links { display: flex; align-items: baseline; flex-wrap: wrap; gap: .5rem 1.25rem; }
 footer { border-top: 1px solid var(--line); color: var(--muted); }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-block: 1.1rem; font-size: .88rem; }
 @media (max-width: 52rem) {
@@ -114,7 +119,7 @@ footer { border-top: 1px solid var(--line); color: var(--muted); }
   .role-picker a { flex: none; }
 }
 @media (max-width: 40rem) {
-  .role-picker { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: .2rem; overflow: visible; }
+  .role-picker { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: .2rem; overflow: visible; }
   .role-picker a { flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; padding: .7rem 0 .45rem; gap: .28rem; min-height: 3rem; font-size: .73rem; }
   .role-picker .role-icon { width: 1.45rem; height: 1.45rem; }
   .role-picker a:nth-child(2) { overflow-wrap: anywhere; }
@@ -124,6 +129,5 @@ footer { border-top: 1px solid var(--line); color: var(--muted); }
 @media (max-width: 30rem) {
   .role-picker { grid-template-columns: repeat(2, minmax(0,1fr)); column-gap: .8rem; }
   .role-picker a { flex-direction: row; align-items: center; text-align: left; padding: .4rem .2rem; font-size: .83rem; }
-  .role-picker a:first-child { grid-column: 1/-1; min-height: 2rem; }
   .workspace-nav .wrap { padding-inline: var(--gutter); }
 }

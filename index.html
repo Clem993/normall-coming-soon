@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    if (location.hash === '#why-i-built-normall') {
+      location.replace('/about/#why-i-built-normall');
+    }
+  </script>
   <title>normALL | Workplace neuroinclusion</title>
   <meta name="description" content="Explore normALL, a workplace neuroinclusion platform with practical tools for neurodivergent professionals, managers, colleagues, and HR teams.">
   <link rel="canonical" href="https://normall.io/">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/normall-symbol.png">
-  <link rel="stylesheet" href="/site.css?v=9">
+  <link rel="stylesheet" href="/site.css?v=10">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -23,12 +28,13 @@
         <h1 id="headline">Workplace tools for different ways of thinking.</h1>
       </div>
     </section>
-    <div class="workspace-nav"><div class="wrap"><nav class="role-picker" aria-label="Workspaces">
+    <div class="workspace-nav"><div class="wrap"><nav class="role-picker" aria-label="Overview, workspaces, and About">
         <a href="/" aria-current="page"><img class="role-icon" src="/assets/normall-symbol.png" width="96" height="96" alt="">Overview</a>
 <a href="/workspaces/#professionals"><img class="role-icon" src="/assets/workspaces/professional.png" width="128" height="128" alt="">Neurodivergent professionals</a>
 <a href="/workspaces/#managers"><img class="role-icon" src="/assets/workspaces/manager.png" width="128" height="128" alt="">Managers</a>
 <a href="/workspaces/#colleagues"><img class="role-icon" src="/assets/workspaces/colleague.png" width="128" height="128" alt="">Colleagues</a>
 <a href="/workspaces/#hr"><img class="role-icon" src="/assets/workspaces/hr.png" width="128" height="128" alt="">HR and People teams</a>
+        <a href="/about/"><span class="about-icon" aria-hidden="true">i</span>About</a>
       </nav></div></div>
     <div class="wrap page-view overview-intro">
       <p class="overview-lead">normALL helps organisations put neuroinclusion into practice.</p>
@@ -60,13 +66,6 @@
         </div>
       </div>
     </section>
-    <section class="wrap page-view founder" id="why-i-built-normall" aria-labelledby="founder-title">
-      <h2 class="section-title" id="founder-title">Why I built normALL</h2>
-      <p>I am a neurodivergent professional working in data and technology for the life sciences. I built normALL because the way we organise work can make a difference to who gets to contribute.</p>
-      <p>Take a meeting: having time to organise your thoughts can help, and so can receiving the questions in advance or being able to follow up in writing. Some of those choices belong to the person taking part, while others belong to the person running the meeting.</p>
-      <p>This thinking shaped normALL’s four workspaces. I would like neurodivergent professionals to be able to choose the support that suits them, and colleagues, managers, and HR teams to have practical ways to make the workplace itself more inclusive.</p>
-      <p><strong>Lavinia Woodward, founder of normALL</strong></p>
-    </section>
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="wrap page-view"><div class="contact-inner">
         <div>
@@ -77,6 +76,6 @@
       </div></div>
     </section>
   </main>
-  <footer><div class="wrap footer-inner"><span>normALL</span><a href="https://www.linkedin.com/company/normall-platform/">normALL on LinkedIn</a></div></footer>
+  <footer><div class="wrap footer-inner"><span>normALL</span><div class="footer-links"><a href="/about/#company-details">Company details</a><a href="https://www.linkedin.com/company/normall-platform/">normALL on LinkedIn</a></div></div></footer>
 </body>
 </html>
