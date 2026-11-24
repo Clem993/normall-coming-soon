@@ -8,55 +8,66 @@
   <link rel="canonical" href="https://normall.io/workspaces/">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/normall-symbol.png">
   <link rel="stylesheet" href="/site.css?v=10">
-  <link rel="stylesheet" href="/workspaces/explorer.css?v=6">
-  <script src="/workspaces/explorer.js?v=6" defer></script>
+  <link rel="stylesheet" href="/workspaces/explorer.css?v=7">
+  <link rel="stylesheet" href="/minimal.css?v=1">
+  <script src="/workspaces/explorer.js?v=7" defer></script>
 </head>
-<body>
+<body class="minimal explorer">
   <a class="skip" href="#main">Skip to content</a>
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="normALL home"><img src="/assets/normall-horizontal.webp" width="550" height="173" alt="normALL"></a>
-      <nav class="header-links" aria-label="Main navigation"><a href="/#contact">Contact</a><a class="button" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry">Request a demo</a></nav>
+      <nav class="header-links" aria-label="Main navigation"><a href="/about/">About</a><a href="https://normall.vercel.app/login">Sign in <span aria-hidden="true">↗</span></a></nav>
     </div>
   </header>
-  <main id="main">
+  <main id="main" tabindex="-1">
     <div class="explorer-intro">
       <div class="wrap">
-        <h1>Explore the workspaces</h1>
-        <p>Choose a role to see its tools and try a worked example.</p>
+        <h1 id="chooser-title" tabindex="-1">Find your workspace.</h1>
+        <p>Choose what is relevant to you. Explore the tools and try an example.</p>
       </div>
     </div>
-    <div class="workspace-nav"><div class="wrap">
-      <nav class="role-picker" aria-label="Overview, workspaces, and About">
-        <a href="/"><img class="role-icon" src="/assets/normall-symbol.png" width="96" height="96" alt="">Overview</a>
-<a href="#professionals"><img class="role-icon" src="/assets/workspaces/professional.png" width="128" height="128" alt="">Neurodivergent professionals</a>
-<a href="#managers"><img class="role-icon" src="/assets/workspaces/manager.png" width="128" height="128" alt="">Managers</a>
-<a href="#colleagues"><img class="role-icon" src="/assets/workspaces/colleague.png" width="128" height="128" alt="">Colleagues</a>
-<a href="#hr"><img class="role-icon" src="/assets/workspaces/hr.png" width="128" height="128" alt="">HR and People teams</a>
-        <a href="/about/"><span class="about-icon" aria-hidden="true">i</span>About</a>
+    <div class="workspace-chooser"><div class="wrap">
+      <nav class="workspace-choices" aria-label="Choose a workspace">
+        <a href="#professionals"><span><strong>Neurodivergent professionals</strong><span class="choice-summary">Plan your work and find support that suits you.</span></span><span class="choice-arrow" aria-hidden="true">↗</span></a>
+        <a href="#managers"><span><strong>Managers</strong><span class="choice-summary">Adapt team practices and review what helps.</span></span><span class="choice-arrow" aria-hidden="true">↗</span></a>
+        <a href="#colleagues"><span><strong>Colleagues</strong><span class="choice-summary">Communicate clearly and work better together.</span></span><span class="choice-arrow" aria-hidden="true">↗</span></a>
+        <a href="#hr"><span><strong>HR and People teams</strong><span class="choice-summary">Prepare inclusive policies, hiring and workplace support.</span></span><span class="choice-arrow" aria-hidden="true">↗</span></a>
       </nav>
+      <noscript><p class="fallback-note">All four workspaces are available below. Use the links to jump to one.</p></noscript>
     </div></div>
     <div class="explorer-content"><div class="wrap page-view">
+      <a class="back-to-chooser" href="/workspaces/" hidden>← All workspaces</a>
       <section class="workspace" id="professionals" aria-labelledby="professionals-title">
         <div class="workspace-grid professional-grid">
           <div class="professional-intro">
             <h2 id="professionals-title" tabindex="-1">Neurodivergent professionals</h2>
-            <p class="role-summary">Choose what would help with the work in front of you, whether that is finding a first step, protecting time to concentrate, or preparing for a conversation.</p>
+            <p class="role-summary">Plan tasks around your energy and prepare for everyday workplace conversations.</p>
+          </div>
+          <div class="professional-tools">
+            <h3>Tools in this workspace</h3>
+            <div class="tool-list">
+              <details><summary>Workplace guidance</summary><p>Find a practical starting point for ten situations, including workload overwhelm, unexpected change, and asking for support. In the prototype, you can also request personalised guidance and save a response to revisit.</p></details>
+              <details><summary>Tasks, timetable, and energy</summary><p>Write steps yourself or ask AI to suggest them. Use energy check-ins and fixed commitments to plan your day, track time spent, and choose when to carry unfinished work forward.</p></details>
+              <details><summary>Communication</summary><p>Start with an editable message, from asking what a request involves to renegotiating a deadline. In the prototype, you can save a private draft or ask AI to suggest a rewrite.</p></details>
+              <details><summary>Working preferences</summary><p>Describe what helps with meetings, communication, and focused work. Choose which details to include when you export a copy.</p></details>
+            </div>
+            <a class="role-demo" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry%20%7C%20Neurodivergent%20professionals">Request a demo of this workspace</a>
           </div>
           <div class="preview professional-preview">
             <h3 class="visually-hidden">Try the professional workspace</h3>
-            <fieldset class="topic-picker" hidden>
-              <legend>Choose an example</legend>
-              <div class="topic-options">
-                <label><input type="radio" name="professional-topic" value="topic-guidance" aria-controls="topic-guidance" checked><span>Workplace guidance</span></label>
-                <label><input type="radio" name="professional-topic" value="topic-task" aria-controls="topic-task"><span>Start a task</span></label>
-                <label><input type="radio" name="professional-topic" value="topic-energy" aria-controls="topic-energy"><span>Plan around energy</span></label>
-                <label><input type="radio" name="professional-topic" value="topic-carry" aria-controls="topic-carry"><span>Replan unfinished work</span></label>
-                <label><input type="radio" name="professional-topic" value="topic-messages" aria-controls="topic-messages"><span>Draft a message</span></label>
-                <label><input type="radio" name="professional-topic" value="topic-preferences" aria-controls="topic-preferences"><span>Share working preferences</span></label>
-              </div>
-            </fieldset>
-            <div class="topic-detail">
+            <div class="topic-picker" hidden>
+              <label class="choice-label" for="professional-topic">Choose an example</label>
+              <select id="professional-topic" aria-controls="professional-examples">
+                <option value="topic-task">Start a task</option>
+                <option value="topic-energy">Plan around energy</option>
+                <option value="topic-guidance">Workplace guidance</option>
+                <option value="topic-carry">Replan unfinished work</option>
+                <option value="topic-messages">Draft a message</option>
+                <option value="topic-preferences">Share working preferences</option>
+              </select>
+            </div>
+            <div class="topic-detail" id="professional-examples">
             <section id="topic-guidance" class="topic-panel" aria-labelledby="topic-guidance-title">
               <h4 id="topic-guidance-title">Find a starting point for a workplace situation</h4>
               <p>Choose a situation to see a practical next step and wording you could use.</p>
@@ -230,31 +241,22 @@
             </section>
             </div>
           </div>
-          <div class="professional-tools">
-            <h3>Tools in this workspace</h3>
-            <dl class="tool-list">
-              <div><dt>Workplace guidance</dt><dd>Find a practical starting point for ten situations, including workload overwhelm, unexpected change, and asking for support. In the prototype, you can also request personalised guidance and save a response to revisit.</dd></div>
-              <div><dt>Tasks, timetable, and energy</dt><dd>Write steps yourself or ask AI to suggest them. Use energy check-ins and fixed commitments to plan your day, track time spent, and choose when to carry unfinished work forward.</dd></div>
-              <div><dt>Communication</dt><dd>Start with an editable message, from asking what a request involves to renegotiating a deadline. In the prototype, you can save a private draft or ask AI to suggest a rewrite.</dd></div>
-              <div><dt>Working preferences</dt><dd>Describe what helps with meetings, communication, and focused work. Choose which details to include when you export a copy.</dd></div>
-            </dl>
-            <a class="role-demo" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry%20%7C%20Neurodivergent%20professionals">Request a demo of this workspace</a>
-          </div>
+
         </div>
       </section>
       <section class="workspace" id="managers" aria-labelledby="managers-title">
         <div class="workspace-grid">
           <div class="workspace-intro">
             <h2 id="managers-title" tabindex="-1">Managers</h2>
-            <p class="role-summary">Prepare clearer requests and meetings, then try a change with your team and record whether it helped.</p>
+            <p class="role-summary">Prepare clearer requests and meetings. Try a team practice and review whether it helped.</p>
           </div>
           <div class="workspace-tools">
             <h3>Tools in this workspace</h3>
-            <dl class="tool-list">
-              <div><dt>Team Resources</dt><dd>Find guidance on meetings, feedback, and working agreements. Adapt a template to spell out the outcome you need, its priority, the deadline, and where questions can go.</dd></div>
-<div><dt>Team Practices</dt><dd>Create a private plan for a change, such as circulating the decisions needed before a meeting. Record what you will try, when you will review it, and how you will judge whether it helped.</dd></div>
-<div><dt>Review history</dt><dd>Keep a record of each review, including the reason for continuing, adapting, or pausing a practice. Revisit earlier decisions when planning the next trial.</dd></div>
-            </dl>
+            <div class="tool-list">
+              <details><summary>Team Resources</summary><p>Find guidance on meetings, feedback, and working agreements. Adapt a template to spell out the outcome you need, its priority, the deadline, and where questions can go.</p></details>
+<details><summary>Team Practices</summary><p>Create a private plan for a change, such as circulating the decisions needed before a meeting. Record what you will try, when you will review it, and how you will judge whether it helped.</p></details>
+<details><summary>Review history</summary><p>Keep a record of each review, including the reason for continuing, adapting, or pausing a practice. Revisit earlier decisions when planning the next trial.</p></details>
+            </div>
             <a class="role-demo" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry%20%7C%20Managers">Request a demo of this workspace</a>
           </div>
           <div class="preview">
@@ -280,15 +282,15 @@
         <div class="workspace-grid">
           <div class="workspace-intro">
             <h2 id="colleagues-title" tabindex="-1">Colleagues</h2>
-            <p class="role-summary">Find words for everyday conversations, clarify an ambiguous request, or try a small change in how you work with someone.</p>
+            <p class="role-summary">Clarify requests and find practical ways to work with your colleagues.</p>
           </div>
           <div class="workspace-tools">
             <h3>Tools in this workspace</h3>
-            <dl class="tool-list">
-              <div><dt>Situation guides</dt><dd>Start with a situation you recognise, such as an unclear handover. Find practical wording, bookmark a guide, and record a private next action.</dd></div>
-<div><dt>Communication templates</dt><dd>Adapt the wording to the recipient and what you need from them. Save a draft, then copy or download the version you want to use.</dd></div>
-<div><dt>Practice plans and learning</dt><dd>Choose a change to try, set a trial date, and record what happened. Short learning modules let you compare possible responses to a workplace situation.</dd></div>
-            </dl>
+            <div class="tool-list">
+              <details><summary>Situation guides</summary><p>Start with a situation you recognise, such as an unclear handover. Find practical wording, bookmark a guide, and record a private next action.</p></details>
+<details><summary>Communication templates</summary><p>Adapt the wording to the recipient and what you need from them. Save a draft, then copy or download the version you want to use.</p></details>
+<details><summary>Practice plans and learning</summary><p>Choose a change to try, set a trial date, and record what happened. Short learning modules let you compare possible responses to a workplace situation.</p></details>
+            </div>
             <a class="role-demo" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry%20%7C%20Colleagues">Request a demo of this workspace</a>
           </div>
           <div class="preview">
@@ -311,15 +313,15 @@
         <div class="workspace-grid">
           <div class="workspace-intro">
             <h2 id="hr-title" tabindex="-1">HR and People teams</h2>
-            <p class="role-summary">Prepare materials for inclusive hiring and workplace support, with a record of what is ready for review and what still needs work.</p>
+            <p class="role-summary">Prepare policies, hiring materials and workplace changes for organisational review.</p>
           </div>
           <div class="workspace-tools">
             <h3>Tools in this workspace</h3>
-            <dl class="tool-list">
-              <div><dt>Policies and guidance</dt><dd>Start with a policy template or workplace support guide. Adapt the wording to your organisation, keep a private draft, and export it for review.</dd></div>
-<div><dt>Inclusive hiring packs</dt><dd>Prepare six stages, from the role brief to onboarding handover. Check each section and export the parts your recruiting team needs.</dd></div>
-<div><dt>Change plans</dt><dd>Record an objective, owner role, actions, and evidence. At review, document what happened and whether the change should continue, be adapted, or pause.</dd></div>
-            </dl>
+            <div class="tool-list">
+              <details><summary>Policies and guidance</summary><p>Start with a policy template or workplace support guide. Adapt the wording to your organisation, keep a private draft, and export it for review.</p></details>
+<details><summary>Inclusive hiring packs</summary><p>Prepare six stages, from the role brief to onboarding handover. Check each section and export the parts your recruiting team needs.</p></details>
+<details><summary>Change plans</summary><p>Record an objective, owner role, actions, and evidence. At review, document what happened and whether the change should continue, be adapted, or pause.</p></details>
+            </div>
             <a class="role-demo" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry%20%7C%20HR%20and%20People%20teams">Request a demo of this workspace</a>
           </div>
           <div class="preview">
@@ -349,6 +351,6 @@
       </section>
     </div></div>
   </main>
-  <footer><div class="wrap footer-inner"><a href="/">normALL home</a><div class="footer-links"><a href="/about/#company-details">Company details</a><a href="https://www.linkedin.com/company/normall-platform/">normALL on LinkedIn</a></div></div></footer>
+  <footer><div class="wrap footer-inner"><a href="/">normALL home</a><div class="footer-links"><a href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry">Request a demo</a><a href="/about/#company-details">Company details</a><a href="https://www.linkedin.com/company/normall-platform/">LinkedIn</a></div></div></footer>
 </body>
 </html>
