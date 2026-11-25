@@ -66,7 +66,7 @@ test('all roles remain readable without JavaScript, with native expandable descr
   assert.equal((page.match(/<details>/g) || []).length, 13);
   assert.doesNotMatch(page, /<details open/);
   assert.match(page, /<noscript>/);
-  assert.equal((page.match(/Request a demo of this workspace<\/a>/g) || []).length, 4);
+  assert.equal((page.match(/class="button workspace-action"/g) || []).length, 4);
 });
 
 test('no role is chosen on first arrival', () => {
@@ -123,12 +123,27 @@ test('browser history and hash changes restore the visible workspace', () => {
   assert.deepEqual(app.visible(), ['hr']);
 });
 
-test('professional example labels match existing panels and start with a task', () => {
+test('workspace overviews have no simulated application controls', () => {
   const page = html('workspaces/index.html');
-  const select = page.match(/<select id="professional-topic"[^>]*>([\s\S]*?)<\/select>/)[1];
-  const values = [...select.matchAll(/value="([^"]+)"/g)].map(m => m[1]);
-  assert.equal(values[0], 'topic-task');
-  assert.equal(values.length, 6);
-  for (const value of values) assert.ok(page.includes(`id="${value}" class="topic-panel"`));
+  assert.doesNotMatch(page, /<select|<textarea|<input|<form|topic-panel|example-output|Try an example/i);
+  assert.doesNotMatch(script, /showExample|showTopic|updatePreferenceNote/);
   assert.doesNotMatch(script, /fetch\(|localStorage|sessionStorage/);
+});
+
+test('each overview has one explicit application action and short opening copy', () => {
+  const page = html('workspaces/index.html');
+  for (const id of roleIds) {
+    const section = page.match(new RegExp(`<section class="workspace" id="${id}"[\\s\\S]*?<\\/section>`))[0];
+    assert.equal((section.match(/class="button workspace-action"/g) || []).length, 1);
+    assert.match(section, /href="https:\/\/normall\.vercel\.app\/login">Open normALL/);
+    assert.match(section, /Sign in to use the tools\./);
+    const opening = section.replace(/<details>([\s\S]*?)<\/details>/g, (_match, content) => content.match(/<summary>([\s\S]*?)<\/summary>/)[1]);
+    const words = opening.replace(/<[^>]*>/g, ' ').trim().split(/\s+/).length;
+    assert.ok(words < 110, `${id}: ${words} initial words`);
+  }
+});
+
+test('all public pages use the refreshed shared colour stylesheet', () => {
+  for (const file of pages) assert.match(html(file), /minimal\.css\?v=2/);
+  assert.match(html('minimal.css'), /background: #f7f4ee;/);
 });
