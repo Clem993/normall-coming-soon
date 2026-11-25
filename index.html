@@ -6,6 +6,8 @@
   <script>
     if (location.hash === '#why-i-built-normall') {
       location.replace('/about/#why-i-built-normall');
+    } else if (location.hash === '#workspaces') {
+      location.replace('/workspaces/');
     }
   </script>
   <title>normALL | Workplace neuroinclusion</title>
@@ -13,69 +15,25 @@
   <link rel="canonical" href="https://normall.io/">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/normall-symbol.png">
   <link rel="stylesheet" href="/site.css?v=10">
+  <link rel="stylesheet" href="/minimal.css?v=1">
 </head>
-<body>
+<body class="minimal landing">
   <a class="skip" href="#main">Skip to content</a>
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="normALL home"><img src="/assets/normall-horizontal.webp" width="550" height="173" alt="normALL"></a>
-      <nav class="header-links" aria-label="Main navigation"><a href="#contact">Contact</a><a class="button" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry">Request a demo</a></nav>
+      <nav class="header-links" aria-label="Main navigation"><a href="/about/">About</a><a href="https://normall.vercel.app/login">Sign in <span aria-hidden="true">↗</span></a></nav>
     </div>
   </header>
-  <main id="main">
+  <main id="main" tabindex="-1">
     <section class="hero" aria-labelledby="headline">
       <div class="wrap hero-inner">
         <h1 id="headline">Workplace tools for different ways of thinking.</h1>
+        <p class="intro">normALL helps neurodivergent professionals plan their day and communicate at work.</p>
+        <a class="button explore-button" href="/workspaces/">Explore the workspaces <span aria-hidden="true">→</span></a>
       </div>
-    </section>
-    <div class="workspace-nav"><div class="wrap"><nav class="role-picker" aria-label="Overview, workspaces, and About">
-        <a href="/" aria-current="page"><img class="role-icon" src="/assets/normall-symbol.png" width="96" height="96" alt="">Overview</a>
-<a href="/workspaces/#professionals"><img class="role-icon" src="/assets/workspaces/professional.png" width="128" height="128" alt="">Neurodivergent professionals</a>
-<a href="/workspaces/#managers"><img class="role-icon" src="/assets/workspaces/manager.png" width="128" height="128" alt="">Managers</a>
-<a href="/workspaces/#colleagues"><img class="role-icon" src="/assets/workspaces/colleague.png" width="128" height="128" alt="">Colleagues</a>
-<a href="/workspaces/#hr"><img class="role-icon" src="/assets/workspaces/hr.png" width="128" height="128" alt="">HR and People teams</a>
-        <a href="/about/"><span class="about-icon" aria-hidden="true">i</span>About</a>
-      </nav></div></div>
-    <div class="wrap page-view overview-intro">
-      <p class="overview-lead">normALL helps organisations put neuroinclusion into practice.</p>
-      <p>Neurodivergent professionals can find strategies that suit how they work and ask for the support they need. Managers and colleagues can adapt how they work together, while HR teams can build inclusion into hiring, onboarding, and workplace policies.</p>
-    </div>
-    <section class="workspaces" id="workspaces" aria-labelledby="role-title">
-      <div class="wrap page-view">
-        <div class="section-opening">
-          <h2 class="section-title" id="role-title">Find your workspace</h2>
-          <a class="text-link" href="/workspaces/">Explore the workspaces <span class="arrow" aria-hidden="true"></span></a>
-        </div>
-        <div class="role-grid">
-          <article class="role"><img class="role-icon" src="/assets/workspaces/professional.png" width="128" height="128" alt=""><div>
-            <h3><a href="/workspaces/#professionals">Neurodivergent professionals</a></h3>
-            <p>Plan tasks around your energy, find guidance when priorities change, or prepare for a difficult conversation.</p>
-          </div></article>
-          <article class="role"><img class="role-icon" src="/assets/workspaces/manager.png" width="128" height="128" alt=""><div>
-            <h3><a href="/workspaces/#managers">Managers</a></h3>
-            <p>Use a template to plan a change to team practice, such as sharing agendas in advance. Set a review date and record what worked.</p>
-          </div></article>
-          <article class="role"><img class="role-icon" src="/assets/workspaces/colleague.png" width="128" height="128" alt=""><div>
-            <h3><a href="/workspaces/#colleagues">Colleagues</a></h3>
-            <p>Find guidance for a workplace situation, adapt a communication template, or choose a change to try in your next meeting.</p>
-          </div></article>
-          <article class="role"><img class="role-icon" src="/assets/workspaces/hr.png" width="128" height="128" alt=""><div>
-            <h3><a href="/workspaces/#hr">HR and People teams</a></h3>
-            <p>Draft a policy, prepare an inclusive hiring pack, or document a workplace change and the evidence you will use to review it.</p>
-          </div></article>
-        </div>
-      </div>
-    </section>
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <div class="wrap page-view"><div class="contact-inner">
-        <div>
-          <h2 id="contact-title">See the prototype</h2>
-          <p>Contact Lavinia Woodward, founder of normALL, for a walkthrough of the tools that would be most relevant to your organisation.</p>
-        </div>
-        <a class="contact-link" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry">lavinia@normall.io <span class="arrow" aria-hidden="true"></span></a>
-      </div></div>
     </section>
   </main>
-  <footer><div class="wrap footer-inner"><span>normALL</span><div class="footer-links"><a href="/about/#company-details">Company details</a><a href="https://www.linkedin.com/company/normall-platform/">normALL on LinkedIn</a></div></div></footer>
+  <footer id="contact"><div class="wrap footer-inner"><a href="mailto:lavinia@normall.io">Contact</a><div class="footer-links"><a href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry">Request a demo</a><a href="/about/#company-details">Company details</a><a href="https://www.linkedin.com/company/normall-platform/">LinkedIn</a></div></div></footer>
 </body>
 </html>
