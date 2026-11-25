@@ -8,8 +8,8 @@
   <link rel="canonical" href="https://normall.io/workspaces/">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/normall-symbol.png">
   <link rel="stylesheet" href="/site.css?v=10">
-  <link rel="stylesheet" href="/minimal.css?v=2">
-  <link rel="stylesheet" href="/workspaces/explorer.css?v=8">
+  <link rel="stylesheet" href="/minimal.css?v=3">
+  <link rel="stylesheet" href="/workspaces/explorer.css?v=9">
   <script src="/workspaces/explorer.js?v=8" defer></script>
 </head>
 <body class="minimal explorer">
@@ -29,10 +29,10 @@
     </div>
     <div class="workspace-chooser"><div class="wrap">
       <nav class="workspace-choices" aria-label="Choose a workspace">
-        <a href="#professionals"><span><strong>Neurodivergent professionals</strong><span class="choice-summary">Plan your work and find support that suits you.</span></span></a>
-        <a href="#managers"><span><strong>Managers</strong><span class="choice-summary">Adapt team practices and review what helps.</span></span></a>
-        <a href="#colleagues"><span><strong>Colleagues</strong><span class="choice-summary">Communicate clearly and work better together.</span></span></a>
-        <a href="#hr"><span><strong>HR and People teams</strong><span class="choice-summary">Prepare inclusive policies, hiring and workplace support.</span></span></a>
+        <a href="#professionals"><img class="workspace-choice-icon" src="/assets/workspaces/professional.png" width="128" height="128" alt=""><span><strong>Neurodivergent professionals</strong><span class="choice-summary">Plan your work and find support that suits you.</span></span></a>
+        <a href="#managers"><img class="workspace-choice-icon" src="/assets/workspaces/manager.png" width="128" height="128" alt=""><span><strong>Managers</strong><span class="choice-summary">Adapt team practices and review what helps.</span></span></a>
+        <a href="#colleagues"><img class="workspace-choice-icon" src="/assets/workspaces/colleague.png" width="128" height="128" alt=""><span><strong>Colleagues</strong><span class="choice-summary">Communicate clearly and work better together.</span></span></a>
+        <a href="#hr"><img class="workspace-choice-icon" src="/assets/workspaces/hr.png" width="128" height="128" alt=""><span><strong>HR and People teams</strong><span class="choice-summary">Prepare inclusive policies, hiring and workplace support.</span></span></a>
       </nav>
       <noscript><p class="fallback-note">All four workspaces are available below. Use the links to jump to one.</p></noscript>
     </div></div>
@@ -41,19 +41,22 @@
       <section class="workspace" id="professionals" aria-labelledby="professionals-title">
         <div class="workspace-grid">
           <div class="workspace-intro">
-            <p class="workspace-label">For neurodivergent professionals</p>
-            <h2 id="professionals-title" tabindex="-1">Make work fit <br>the way you think.</h2>
+            <div class="workspace-copy">
+            <p class="workspace-label">Planning and workplace support</p>
+            <h2 id="professionals-title" tabindex="-1">Professional workspace</h2>
             <p class="role-summary">Break tasks into manageable steps, plan around your energy and find the words for workplace conversations.</p>
             <a class="button workspace-action" href="https://normall.vercel.app/login">Open normALL<span class="visually-hidden"> for professionals</span></a>
             <p class="access-note">Sign in to use the tools.</p>
+            </div>
+            <div class="workspace-art" aria-hidden="true"><img src="/assets/brand/professional.png" width="2103" height="2103" alt="" loading="lazy" decoding="async"></div>
           </div>
           <div class="workspace-tools">
-            <h3>Inside your workspace</h3>
+            <h3>Explore the tools</h3><p class="tools-hint">Select a tool to learn more.</p>
             <div class="tool-list">
-              <details><summary><span>Tasks and timetable<small>Turn a task into a plan.</small></span></summary><p>Write your own steps or ask AI to suggest them. Schedule the work, track time spent and choose when to carry unfinished steps forward.</p></details>
-              <details><summary><span>Energy<small>Find the times that work for you.</small></span></summary><p>Use check-ins to learn your energy patterns, including differences between weekdays and weekends, and use those insights when planning.</p></details>
-              <details><summary><span>Communication<small>Prepare what you want to say.</small></span></summary><p>Adapt a message template, save a private draft or ask AI to suggest a rewrite. Use working preferences to explain what helps you.</p></details>
-              <details><summary><span>Workplace guidance<small>Find a practical next step.</small></span></summary><p>Explore guidance for situations such as workload overwhelm, unexpected change and asking for support.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/tasks.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Tasks and timetable<small>Turn a task into a plan.</small></span></summary><p>Write your own steps or ask AI to suggest them. Schedule the work, track time spent and choose when to carry unfinished steps forward.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/energy.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Energy<small>Find the times that work for you.</small></span></summary><p>Use check-ins to learn your energy patterns, including differences between weekdays and weekends, and use those insights when planning.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/communication.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Communication<small>Prepare what you want to say.</small></span></summary><p>Adapt a message template, save a private draft or ask AI to suggest a rewrite. Use working preferences to explain what helps you.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/guidance.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Workplace guidance<small>Find a practical next step.</small></span></summary><p>Explore guidance for situations such as workload overwhelm, unexpected change and asking for support.</p></details>
             </div>
           </div>
         </div>
@@ -61,18 +64,21 @@
       <section class="workspace" id="managers" aria-labelledby="managers-title">
         <div class="workspace-grid">
           <div class="workspace-intro">
-            <p class="workspace-label">For managers</p>
-            <h2 id="managers-title" tabindex="-1">Help your team <br>work well together.</h2>
+            <div class="workspace-copy">
+            <p class="workspace-label">Team support</p>
+            <h2 id="managers-title" tabindex="-1">Manager workspace</h2>
             <p class="role-summary">Prepare for conversations, agree practical changes and review what helps your team.</p>
             <a class="button workspace-action" href="https://normall.vercel.app/login">Open normALL<span class="visually-hidden"> for managers</span></a>
             <p class="access-note">Sign in to use the tools.</p>
+            </div>
+            <div class="workspace-art" aria-hidden="true"><img src="/assets/brand/manager.png" width="2103" height="2103" alt="" loading="lazy" decoding="async"></div>
           </div>
           <div class="workspace-tools">
-            <h3>Inside your workspace</h3>
+            <h3>Explore the tools</h3><p class="tools-hint">Select a tool to learn more.</p>
             <div class="tool-list">
-              <details><summary><span>Team resources<small>Prepare for everyday management.</small></span></summary><p>Find guidance and editable templates for meetings, feedback and working agreements.</p></details>
-              <details><summary><span>Team practices<small>Agree a change to try.</small></span></summary><p>Make a private plan for a working practice. Record what you will try, when to review it and how you will judge whether it helped.</p></details>
-              <details><summary><span>Review history<small>Keep track of what helps.</small></span></summary><p>Record why you continued, adapted or paused a practice, and revisit earlier decisions before the next trial.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/learning.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Team resources<small>Prepare for everyday management.</small></span></summary><p>Find guidance and editable templates for meetings, feedback and working agreements.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/meetings.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Team practices<small>Agree a change to try.</small></span></summary><p>Make a private plan for a working practice. Record what you will try, when to review it and how you will judge whether it helped.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/review.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Review history<small>Keep track of what helps.</small></span></summary><p>Record why you continued, adapted or paused a practice, and revisit earlier decisions before the next trial.</p></details>
             </div>
           </div>
         </div>
@@ -80,18 +86,21 @@
       <section class="workspace" id="colleagues" aria-labelledby="colleagues-title">
         <div class="workspace-grid">
           <div class="workspace-intro">
-            <p class="workspace-label">For colleagues</p>
-            <h2 id="colleagues-title" tabindex="-1">Make everyday <br>collaboration easier.</h2>
+            <div class="workspace-copy">
+            <p class="workspace-label">Working well together</p>
+            <h2 id="colleagues-title" tabindex="-1">Colleague workspace</h2>
             <p class="role-summary">Clarify a request, prepare a message and find ways of working that suit the people around you.</p>
             <a class="button workspace-action" href="https://normall.vercel.app/login">Open normALL<span class="visually-hidden"> for colleagues</span></a>
             <p class="access-note">Sign in to use the tools.</p>
+            </div>
+            <div class="workspace-art" aria-hidden="true"><img src="/assets/brand/colleague.png" width="2103" height="2103" alt="" loading="lazy" decoding="async"></div>
           </div>
           <div class="workspace-tools">
-            <h3>Inside your workspace</h3>
+            <h3>Explore the tools</h3><p class="tools-hint">Select a tool to learn more.</p>
             <div class="tool-list">
-              <details><summary><span>Situation guides<small>Work through a familiar challenge.</small></span></summary><p>Find practical wording for situations such as an unclear handover. Bookmark useful guidance and record a private next action.</p></details>
-              <details><summary><span>Communication templates<small>Start with wording you can adapt.</small></span></summary><p>Prepare a message for the recipient and what you need from them. Save a draft, then copy or download your version.</p></details>
-              <details><summary><span>Practice and learning<small>Try a different way of working.</small></span></summary><p>Plan a small change and record what happened. Short learning modules help you consider different responses to workplace situations.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/guidance.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Situation guides<small>Work through a familiar challenge.</small></span></summary><p>Find practical wording for situations such as an unclear handover. Bookmark useful guidance and record a private next action.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/communication.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Communication templates<small>Start with wording you can adapt.</small></span></summary><p>Prepare a message for the recipient and what you need from them. Save a draft, then copy or download your version.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/learning.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Practice and learning<small>Try a different way of working.</small></span></summary><p>Plan a small change and record what happened. Short learning modules help you consider different responses to workplace situations.</p></details>
             </div>
           </div>
         </div>
@@ -99,18 +108,21 @@
       <section class="workspace" id="hr" aria-labelledby="hr-title">
         <div class="workspace-grid">
           <div class="workspace-intro">
-            <p class="workspace-label">For HR and People teams</p>
-            <h2 id="hr-title" tabindex="-1">Put inclusion <br>into practice.</h2>
+            <div class="workspace-copy">
+            <p class="workspace-label">Policy and practice</p>
+            <h2 id="hr-title" tabindex="-1">HR workspace</h2>
             <p class="role-summary">Develop policies, prepare inclusive hiring and plan changes your organisation can review.</p>
             <a class="button workspace-action" href="https://normall.vercel.app/login">Open normALL<span class="visually-hidden"> for HR and People teams</span></a>
             <p class="access-note">Sign in to use the tools.</p>
+            </div>
+            <div class="workspace-art" aria-hidden="true"><img src="/assets/brand/hr.png" width="2103" height="2103" alt="" loading="lazy" decoding="async"></div>
           </div>
           <div class="workspace-tools">
-            <h3>Inside your workspace</h3>
+            <h3>Explore the tools</h3><p class="tools-hint">Select a tool to learn more.</p>
             <div class="tool-list">
-              <details><summary><span>Policies and support<small>Adapt guidance to your organisation.</small></span></summary><p>Start with policy templates and workplace support guides. Keep a private draft and export it for review.</p></details>
-              <details><summary><span>Inclusive hiring<small>Prepare each stage of recruitment.</small></span></summary><p>Build a hiring pack from the role brief through to onboarding handover. Review and export the sections your team needs.</p></details>
-              <details><summary><span>Change plans<small>Follow a change through to review.</small></span></summary><p>Record the objective, owner role, actions and evidence. Review what happened before deciding whether to continue, adapt or pause.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/policies.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Policies and support<small>Adapt guidance to your organisation.</small></span></summary><p>Start with policy templates and workplace support guides. Keep a private draft and export it for review.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/colleague.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Inclusive hiring<small>Prepare each stage of recruitment.</small></span></summary><p>Build a hiring pack from the role brief through to onboarding handover. Review and export the sections your team needs.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/strategy.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Change plans<small>Follow a change through to review.</small></span></summary><p>Record the objective, owner role, actions and evidence. Review what happened before deciding whether to continue, adapt or pause.</p></details>
             </div>
           </div>
         </div>

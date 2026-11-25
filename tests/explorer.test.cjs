@@ -143,7 +143,25 @@ test('each overview has one explicit application action and short opening copy',
   }
 });
 
-test('all public pages use the refreshed shared colour stylesheet', () => {
-  for (const file of pages) assert.match(html(file), /minimal\.css\?v=2/);
-  assert.match(html('minimal.css'), /background: #f7f4ee;/);
+test('public pages retain the approved light background and load current styles', () => {
+  for (const file of pages) assert.match(html(file), /minimal\.css\?v=3/);
+  assert.match(html('minimal.css'), /background: #fcfcfa;/);
+  assert.match(html('workspaces/index.html'), /explorer\.css\?v=9/);
+});
+
+test('every workspace has its original brand illustration and illustrated tool descriptions', () => {
+  const page = html('workspaces/index.html');
+  const illustrations = ['professional', 'manager', 'colleague', 'hr'];
+  for (const [index, id] of roleIds.entries()) {
+    const section = page.match(new RegExp(`<section class="workspace" id="${id}"[\\s\\S]*?<\\/section>`))[0];
+    assert.match(section, new RegExp(`src="/assets/brand/${illustrations[index]}\\.png"`));
+    assert.equal((section.match(/class="tool-icon"/g) || []).length, index === 0 ? 4 : 3);
+    const images = [...section.matchAll(/<img\b[^>]*>/g)].map(match => match[0]);
+    for (const image of images) {
+      assert.match(image, /alt=""/);
+      assert.match(image, /width="\d+" height="\d+"/);
+    }
+  }
+  assert.equal((page.match(/class="workspace-choice-icon"/g) || []).length, 4);
+  assert.doesNotMatch(page, /Make work fit|Help your team <br>|Put inclusion <br>/);
 });
