@@ -66,7 +66,7 @@ test('all roles remain readable without JavaScript, with native expandable descr
   assert.equal((page.match(/<details>/g) || []).length, 13);
   assert.doesNotMatch(page, /<details open/);
   assert.match(page, /<noscript>/);
-  assert.equal((page.match(/Request a demo of this workspace<\/a>/g) || []).length, 4);
+  assert.equal((page.match(/class="button workspace-action"/g) || []).length, 4);
 });
 
 test('no role is chosen on first arrival', () => {
@@ -74,6 +74,29 @@ test('no role is chosen on first arrival', () => {
   assert.deepEqual(app.visible(), []);
   assert.equal(app.classes.has('has-selection'), false);
   assert.equal(app.back.hidden, true);
+});
+
+test('About uses Founder and places smaller registration details in the footer', () => {
+  const page = html('about/index.html');
+  assert.match(page, /Lavinia Woodward, Founder of normALL/);
+  assert.match(page, /<footer>[\s\S]*id="company-details"[\s\S]*<\/footer>/);
+  assert.doesNotMatch(page.match(/<main[\s\S]*?<\/main>/)[0], /id="company-details"/);
+  assert.match(page, /about\/about\.css\?v=2/);
+  assert.match(html('about/about.css'), /font-size: \.75rem;/);
+  assert.match(page, /Company number 16856968/);
+  assert.match(page, /Registered office: 3rd Floor, 86–90 Paul Street, London, EC2A 4NE\./);
+});
+
+test('About keeps a smaller navy founder heading below the main page title', () => {
+  const page = html('about/index.html');
+  const css = html('about/about.css');
+  assert.match(page, /<h1 id="headline">About normALL<\/h1>/);
+  assert.match(page, /<h2 class="section-title" id="founder-title">Why I built normALL<\/h2>/);
+  const heading = css.match(/\.about \.founder \.section-title \{([^}]+)\}/)[1];
+  assert.match(heading, /color: var\(--deep\);/);
+  assert.match(heading, /font-size: clamp\(1\.5rem, 1\.3rem \+ \.5vw, 1\.875rem\);/);
+  assert.match(heading, /font-weight: 600;/);
+  assert.match(css, /\.about \.founder \{ padding-top: clamp\(1rem, 2vw, 2rem\); \}/);
 });
 
 for (const id of roleIds) test(`${id}: direct link selects only the requested workspace`, () => {
@@ -123,12 +146,64 @@ test('browser history and hash changes restore the visible workspace', () => {
   assert.deepEqual(app.visible(), ['hr']);
 });
 
-test('professional example labels match existing panels and start with a task', () => {
+test('workspace overviews have no simulated application controls', () => {
   const page = html('workspaces/index.html');
-  const select = page.match(/<select id="professional-topic"[^>]*>([\s\S]*?)<\/select>/)[1];
-  const values = [...select.matchAll(/value="([^"]+)"/g)].map(m => m[1]);
-  assert.equal(values[0], 'topic-task');
-  assert.equal(values.length, 6);
-  for (const value of values) assert.ok(page.includes(`id="${value}" class="topic-panel"`));
+  assert.doesNotMatch(page, /<select|<textarea|<input|<form|topic-panel|example-output|Try an example/i);
+  assert.doesNotMatch(script, /showExample|showTopic|updatePreferenceNote/);
   assert.doesNotMatch(script, /fetch\(|localStorage|sessionStorage/);
+});
+
+test('each overview has one explicit application action and short opening copy', () => {
+  const page = html('workspaces/index.html');
+  for (const id of roleIds) {
+    const section = page.match(new RegExp(`<section class="workspace" id="${id}"[\\s\\S]*?<\\/section>`))[0];
+    assert.equal((section.match(/class="button workspace-action"/g) || []).length, 1);
+    assert.match(section, /href="https:\/\/normall\.vercel\.app\/login">Open normALL/);
+    assert.match(section, /Sign in to use the tools\./);
+    const opening = section.replace(/<details>([\s\S]*?)<\/details>/g, (_match, content) => content.match(/<summary>([\s\S]*?)<\/summary>/)[1]);
+    const words = opening.replace(/<[^>]*>/g, ' ').trim().split(/\s+/).length;
+    assert.ok(words < 110, `${id}: ${words} initial words`);
+  }
+});
+
+test('public pages retain the approved light background and load current styles', () => {
+  for (const file of pages) assert.match(html(file), /minimal\.css\?v=3/);
+  assert.match(html('minimal.css'), /background: #fcfcfa;/);
+  assert.match(html('workspaces/index.html'), /explorer\.css\?v=10/);
+});
+
+test('workspace choices and introductions retain colour without decorative borders', () => {
+  const css = html('workspaces/explorer.css');
+  const choices = css.match(/^\.workspace-choices a \{([^}]+)\}/m)[1];
+  const intro = css.match(/^\.workspace-intro \{([^}]+)\}/m)[1];
+  assert.match(choices, /border: 0;/);
+  assert.match(intro, /border: 0;/);
+  assert.doesNotMatch(css, /border-bottom: [23]px|border-left: 4px/);
+  assert.match(css, /\.has-selection \.workspace-choices \[aria-current\] \{ background: #e8f3f4; \}/);
+  assert.match(css, /\.workspace-choices a:focus-visible/);
+});
+
+test('the Neurodivergent workspace keeps its existing deep link and specific accessible action', () => {
+  const page = html('workspaces/index.html');
+  assert.match(page, /<h2 id="professionals-title" tabindex="-1">Neurodivergent workspace<\/h2>/);
+  assert.match(page, /href="#professionals"/);
+  assert.match(page, /for neurodivergent professionals<\/span>/);
+  assert.doesNotMatch(page, />Professional workspace</);
+});
+
+test('every workspace has its original brand illustration and illustrated tool descriptions', () => {
+  const page = html('workspaces/index.html');
+  const illustrations = ['professional', 'manager', 'colleague', 'hr'];
+  for (const [index, id] of roleIds.entries()) {
+    const section = page.match(new RegExp(`<section class="workspace" id="${id}"[\\s\\S]*?<\\/section>`))[0];
+    assert.match(section, new RegExp(`src="/assets/brand/${illustrations[index]}\\.png"`));
+    assert.equal((section.match(/class="tool-icon"/g) || []).length, index === 0 ? 4 : 3);
+    const images = [...section.matchAll(/<img\b[^>]*>/g)].map(match => match[0]);
+    for (const image of images) {
+      assert.match(image, /alt=""/);
+      assert.match(image, /width="\d+" height="\d+"/);
+    }
+  }
+  assert.equal((page.match(/class="workspace-choice-icon"/g) || []).length, 4);
+  assert.doesNotMatch(page, /Make work fit|Help your team <br>|Put inclusion <br>/);
 });

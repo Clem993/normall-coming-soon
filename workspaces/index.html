@@ -4,276 +4,81 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Explore the workspaces | normALL</title>
-  <meta name="description" content="Try examples from four normALL workspaces, from planning a day around your energy to preparing an inclusive hiring pack.">
+  <meta name="description" content="Find your normALL workspace: tools for neurodivergent professionals, managers, colleagues, and HR and People teams.">
   <link rel="canonical" href="https://normall.io/workspaces/">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/normall-symbol.png">
   <link rel="stylesheet" href="/site.css?v=10">
-  <link rel="stylesheet" href="/workspaces/explorer.css?v=7">
-  <link rel="stylesheet" href="/minimal.css?v=1">
-  <script src="/workspaces/explorer.js?v=7" defer></script>
+  <link rel="stylesheet" href="/minimal.css?v=3">
+  <link rel="stylesheet" href="/workspaces/explorer.css?v=10">
+  <script src="/workspaces/explorer.js?v=8" defer></script>
 </head>
 <body class="minimal explorer">
   <a class="skip" href="#main">Skip to content</a>
   <header>
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label="normALL home"><img src="/assets/normall-horizontal.webp" width="550" height="173" alt="normALL"></a>
-      <nav class="header-links" aria-label="Main navigation"><a href="/about/">About</a><a href="https://normall.vercel.app/login">Sign in <span aria-hidden="true">↗</span></a></nav>
+      <nav class="header-links" aria-label="Main navigation"><a href="/about/">About</a><a href="https://normall.vercel.app/login">Sign in</a></nav>
     </div>
   </header>
   <main id="main" tabindex="-1">
     <div class="explorer-intro">
       <div class="wrap">
         <h1 id="chooser-title" tabindex="-1">Find your workspace.</h1>
-        <p>Choose what is relevant to you. Explore the tools and try an example.</p>
+        <p>Practical support for your working day, your team or your organisation.</p>
       </div>
     </div>
     <div class="workspace-chooser"><div class="wrap">
       <nav class="workspace-choices" aria-label="Choose a workspace">
-        <a href="#professionals"><span><strong>Neurodivergent professionals</strong><span class="choice-summary">Plan your work and find support that suits you.</span></span><span class="choice-arrow" aria-hidden="true">↗</span></a>
-        <a href="#managers"><span><strong>Managers</strong><span class="choice-summary">Adapt team practices and review what helps.</span></span><span class="choice-arrow" aria-hidden="true">↗</span></a>
-        <a href="#colleagues"><span><strong>Colleagues</strong><span class="choice-summary">Communicate clearly and work better together.</span></span><span class="choice-arrow" aria-hidden="true">↗</span></a>
-        <a href="#hr"><span><strong>HR and People teams</strong><span class="choice-summary">Prepare inclusive policies, hiring and workplace support.</span></span><span class="choice-arrow" aria-hidden="true">↗</span></a>
+        <a href="#professionals"><img class="workspace-choice-icon" src="/assets/workspaces/professional.png" width="128" height="128" alt=""><span><strong>Neurodivergent professionals</strong><span class="choice-summary">Plan your work and find support that suits you.</span></span></a>
+        <a href="#managers"><img class="workspace-choice-icon" src="/assets/workspaces/manager.png" width="128" height="128" alt=""><span><strong>Managers</strong><span class="choice-summary">Adapt team practices and review what helps.</span></span></a>
+        <a href="#colleagues"><img class="workspace-choice-icon" src="/assets/workspaces/colleague.png" width="128" height="128" alt=""><span><strong>Colleagues</strong><span class="choice-summary">Communicate clearly and work better together.</span></span></a>
+        <a href="#hr"><img class="workspace-choice-icon" src="/assets/workspaces/hr.png" width="128" height="128" alt=""><span><strong>HR and People teams</strong><span class="choice-summary">Prepare inclusive policies, hiring and workplace support.</span></span></a>
       </nav>
       <noscript><p class="fallback-note">All four workspaces are available below. Use the links to jump to one.</p></noscript>
     </div></div>
     <div class="explorer-content"><div class="wrap page-view">
-      <a class="back-to-chooser" href="/workspaces/" hidden>← All workspaces</a>
+      <a class="back-to-chooser" href="/workspaces/" hidden>All workspaces</a>
       <section class="workspace" id="professionals" aria-labelledby="professionals-title">
-        <div class="workspace-grid professional-grid">
-          <div class="professional-intro">
-            <h2 id="professionals-title" tabindex="-1">Neurodivergent professionals</h2>
-            <p class="role-summary">Plan tasks around your energy and prepare for everyday workplace conversations.</p>
+        <div class="workspace-grid">
+          <div class="workspace-intro">
+            <div class="workspace-copy">
+            <p class="workspace-label">Planning and workplace support</p>
+            <h2 id="professionals-title" tabindex="-1">Neurodivergent workspace</h2>
+            <p class="role-summary">Break tasks into manageable steps, plan around your energy and find the words for workplace conversations.</p>
+            <a class="button workspace-action" href="https://normall.vercel.app/login">Open normALL<span class="visually-hidden"> for neurodivergent professionals</span></a>
+            <p class="access-note">Sign in to use the tools.</p>
+            </div>
+            <div class="workspace-art" aria-hidden="true"><img src="/assets/brand/professional.png" width="2103" height="2103" alt="" loading="lazy" decoding="async"></div>
           </div>
-          <div class="professional-tools">
-            <h3>Tools in this workspace</h3>
+          <div class="workspace-tools">
+            <h3>Explore the tools</h3><p class="tools-hint">Select a tool to learn more.</p>
             <div class="tool-list">
-              <details><summary>Workplace guidance</summary><p>Find a practical starting point for ten situations, including workload overwhelm, unexpected change, and asking for support. In the prototype, you can also request personalised guidance and save a response to revisit.</p></details>
-              <details><summary>Tasks, timetable, and energy</summary><p>Write steps yourself or ask AI to suggest them. Use energy check-ins and fixed commitments to plan your day, track time spent, and choose when to carry unfinished work forward.</p></details>
-              <details><summary>Communication</summary><p>Start with an editable message, from asking what a request involves to renegotiating a deadline. In the prototype, you can save a private draft or ask AI to suggest a rewrite.</p></details>
-              <details><summary>Working preferences</summary><p>Describe what helps with meetings, communication, and focused work. Choose which details to include when you export a copy.</p></details>
-            </div>
-            <a class="role-demo" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry%20%7C%20Neurodivergent%20professionals">Request a demo of this workspace</a>
-          </div>
-          <div class="preview professional-preview">
-            <h3 class="visually-hidden">Try the professional workspace</h3>
-            <div class="topic-picker" hidden>
-              <label class="choice-label" for="professional-topic">Choose an example</label>
-              <select id="professional-topic" aria-controls="professional-examples">
-                <option value="topic-task">Start a task</option>
-                <option value="topic-energy">Plan around energy</option>
-                <option value="topic-guidance">Workplace guidance</option>
-                <option value="topic-carry">Replan unfinished work</option>
-                <option value="topic-messages">Draft a message</option>
-                <option value="topic-preferences">Share working preferences</option>
-              </select>
-            </div>
-            <div class="topic-detail" id="professional-examples">
-            <section id="topic-guidance" class="topic-panel" aria-labelledby="topic-guidance-title">
-              <h4 id="topic-guidance-title">Find a starting point for a workplace situation</h4>
-              <p>Choose a situation to see a practical next step and wording you could use.</p>
-              <div class="choice" hidden>
-                <label class="choice-label" for="guidance-choice">Choose a situation</label>
-                <select id="guidance-choice" aria-controls="guidance-examples">
-                  <option value="guidance-workload">Workload and overwhelm</option>
-                  <option value="guidance-change">Unexpected change</option>
-                  <option value="guidance-conversation">A difficult conversation</option>
-                  <option value="guidance-focus">Focus and distractions</option>
-                  <option value="guidance-setback">After a setback</option>
-                  <option value="guidance-support">Asking for support</option>
-                  <option value="guidance-meeting">Meeting preparation</option>
-                  <option value="guidance-time">Time and deadlines</option>
-                  <option value="guidance-routine">Building a routine</option>
-                  <option value="guidance-other">Another workplace situation</option>
-                </select>
-              </div>
-              <div id="guidance-examples" aria-live="polite">
-                <div id="guidance-workload" class="example-output">
-                  <h5>When two requests both come first</h5>
-                  <p>A colleague asks for slides by midday while you are finishing a report due at the same time.</p><p><strong>A starting point.</strong> Write down what you can finish by midday and who can decide which piece moves. Ask for that decision before trying to do both.</p><p class="sample-wording">“I can send the report or the slides by midday. Which one does the team need first?”</p>
-                </div>
-                <div id="guidance-change" class="example-output">
-                  <h5>When the brief changes halfway through</h5>
-                  <p>You have drafted a briefing for the project team. It now needs to go to the board.</p><p><strong>A starting point.</strong> Separate what you can reuse from what needs a decision. Keep the figures you have checked and ask what the new audience needs to decide.</p><p class="sample-wording">“I can reuse the analysis. What decision does the board need from this paper, and is Thursday still the deadline?”</p>
-                </div>
-                <div id="guidance-conversation" class="example-output">
-                  <h5>Prepare a specific request</h5>
-                  <p>Two deadlines moved in meetings you did not attend. You want to raise this with your manager.</p><p><strong>A starting point.</strong> Pick one instance and describe its effect. Ask how the change was communicated, then agree where future changes will be recorded.</p><p class="sample-wording">“I was working to Friday because that was the date in the brief. How did the new date reach the team? Could we update the brief when a deadline moves?”</p>
-                </div>
-                <div id="guidance-focus" class="example-output">
-                  <h5>Leave yourself a way back into the task</h5>
-                  <p>Messages keep interrupting you while you check a spreadsheet.</p><p><strong>A starting point.</strong> Choose one check, agree where urgent questions should go, and write down where you stopped before switching away.</p><p class="sample-wording">Restart note: “Rows 1 to 12 checked. Next, compare row 13 with the source invoice.”</p>
-                </div>
-                <div id="guidance-setback" class="example-output">
-                  <h5>Work out what can be repaired</h5>
-                  <p>You discover an old figure in a briefing you have already circulated.</p><p><strong>A starting point.</strong> Identify the figure, check whether it changes the recommendation, and tell the people relying on it what you will correct and when.</p><p class="sample-wording">“The total on page two came from last month’s file. I am checking the recommendation and will send a corrected version by 11:00.”</p>
-                </div>
-                <div id="guidance-support" class="example-output">
-                  <h5>Propose a change you can try</h5>
-                  <p>Decisions come quickly at a weekly meeting, and you have more to contribute once you have reviewed the papers.</p><p><strong>A starting point.</strong> Describe the barrier, suggest one change, and agree when to review it. You can explain what helps without sharing a diagnosis.</p><p class="sample-wording">“Could we circulate the questions the day before the next two meetings? Then I can check the figures and bring a considered response.”</p>
-                </div>
-                <div id="guidance-meeting" class="example-output">
-                  <h5>Make room for the point you want to raise</h5>
-                  <p>A meeting invite says “project update”, and you are unsure what to prepare.</p><p><strong>A starting point.</strong> Ask which decision is needed. Once you know, jot down the evidence and one question you want to bring.</p><p class="sample-wording">“Are we choosing a supplier or reviewing progress? If we are choosing, I will bring the cost comparison.”</p>
-                </div>
-                <div id="guidance-time" class="example-output">
-                  <h5>Include the work after the first draft</h5>
-                  <p>You have been asked to send a finished paper on Friday and a colleague needs time to review it.</p><p><strong>A starting point.</strong> Work back from Friday to allow for the review and revisions. Use time tracked on similar work to estimate the first draft.</p><p class="sample-wording">“If I get the draft to you on Wednesday, could you return comments by Thursday lunchtime?”</p>
-                </div>
-                <div id="guidance-routine" class="example-output">
-                  <h5>Attach one action to an existing event</h5>
-                  <p>You often leave a meeting knowing your next action, then lose it when another call starts.</p><p><strong>A starting point.</strong> Try adding one action to your task list as you close the meeting notes. After a few meetings, check whether that cue works for you.</p><p class="sample-wording">Example task: “Email Priya the revised figures by Thursday at 10:00.”</p>
-                </div>
-                <div id="guidance-other" class="example-output">
-                  <h5>Choose one question that reduces uncertainty</h5>
-                  <p>You have been added to a project channel and cannot tell whether anyone needs something from you.</p><p><strong>A starting point.</strong> Write down what you know, what is unclear, and who can answer. Use their response to decide whether to add a task.</p><p class="sample-wording">“Am I here to follow progress, or is there a particular decision you would like my input on?”</p>
-                </div>
-              </div>
-            </section>
-            <section id="topic-task" class="topic-panel" aria-labelledby="topic-task-title">
-              <h4 id="topic-task-title">Break down a handover</h4>
-              <p>You are going on leave tomorrow. “Prepare the handover” is on your list, but it is difficult to tell where to begin. Try ticking off these example steps.</p>
-              <ul class="steps sample-steps"><li><label><input type="checkbox"><span>Open the handover document and write the project name.</span></label></li><li><label><input type="checkbox"><span>Add the next deadline and what is due.</span></label></li><li><label><input type="checkbox"><span>List the outstanding decision and who can make it.</span></label></li><li><label><input type="checkbox"><span>Link the latest working file.</span></label></li><li><label><input type="checkbox"><span>Write the one thing your colleague should do first.</span></label></li></ul>
-              <p class="example-note">In the prototype, you can edit the steps, add your own, or place one step at a time in your timetable.</p>
-            </section>
-            <section id="topic-energy" class="topic-panel" aria-labelledby="topic-energy-title">
-              <h4 id="topic-energy-title">Plan a report around a fixed meeting</h4>
-              <p>You need to draft a report and check its references. Your 11:00 meeting is fixed. Choose when focused work tends to feel easier and compare the two timetables.</p>
-              <div class="choice" hidden>
-                <label class="choice-label" for="professionals-choice">When is focused work easier?</label>
-                <select id="professionals-choice" aria-controls="professionals-examples">
-                  <option value="professionals-am">In the morning</option>
-                  <option value="professionals-pm">In the afternoon</option>
-                </select>
-              </div>
-              <div id="professionals-examples" aria-live="polite">
-                <div id="professionals-am" class="example-output">
-                  <h5>Morning focus</h5>
-                  <ul class="agenda"><li><time>09:30</time><span>Draft the recommendations while your energy is higher.</span></li><li><time>11:00</time><span>Team meeting (fixed).</span></li><li><time>14:00</time><span>Check the references and tidy the document.</span></li></ul>
-                </div>
-                <div id="professionals-pm" class="example-output">
-                  <h5>Afternoon focus</h5>
-                  <ul class="agenda"><li><time>09:30</time><span>Check the references and tidy the document.</span></li><li><time>11:00</time><span>Team meeting (fixed).</span></li><li><time>14:00</time><span>Draft the recommendations while your energy is higher.</span></li></ul>
-                </div>
-              </div>
-            </section>
-            <section id="topic-carry" class="topic-panel" aria-labelledby="topic-carry-title">
-              <h4 id="topic-carry-title">Pick up a task after an interruption</h4>
-              <p>A call ran over and you missed a planned slot. You have checked the spending figures for your report. Writing the explanation is still open.</p>
-              <div class="choice" hidden>
-                <label class="choice-label" for="carry-choice">When would you like to pick it up?</label>
-                <select id="carry-choice" aria-controls="carry-examples">
-                  <option value="carry-today">Later today</option>
-                  <option value="carry-tomorrow">Tomorrow</option>
-                </select>
-              </div>
-              <div id="carry-examples" aria-live="polite">
-                <div id="carry-today" class="example-output">
-                  <h5>Keep a smaller step for today</h5>
-                  <p>You have 20 minutes before the end of the day. Move “Explain the largest change in spending” into that slot. Leave proofreading as a separate step.</p><p><strong>Restart note.</strong> The largest increase is in travel costs. The figures are checked. Start with the reason for the change.</p>
-                </div>
-                <div id="carry-tomorrow" class="example-output">
-                  <h5>Protect time for the unfinished step</h5>
-                  <p>Move the explanation to a free slot tomorrow morning. Keep the figures marked as checked so you can pick up where you stopped.</p><p><strong>If someone is waiting.</strong> “The figures are ready today. I can send them now and follow with the explanation tomorrow morning. Does that work for you?”</p>
-                </div>
-              </div>
-            </section>
-            <section id="topic-messages" class="topic-panel" aria-labelledby="topic-messages-title">
-              <h4 id="topic-messages-title">Find the words for a work conversation</h4>
-              <p>Choose the conversation you need to have, then adapt the sample wording. Edits stay on this page.</p>
-              <div class="choice" hidden>
-                <label class="choice-label" for="draft-choice">Message template</label>
-                <select id="draft-choice" aria-controls="draft-examples">
-                  <option value="draft-clarify">Clarify a request</option>
-                  <option value="draft-priorities">Discuss competing priorities</option>
-                  <option value="draft-adjust">Ask for a working adjustment</option>
-                  <option value="draft-meeting">Prepare for a meeting</option>
-                  <option value="draft-deadline">Renegotiate a deadline</option>
-                  <option value="draft-followup">Confirm what was agreed</option>
-                </select>
-              </div>
-              <div id="draft-examples" aria-live="polite">
-                <div id="draft-clarify" class="example-output">
-                  <h5>Find out what is needed</h5>
-                  <p>A teammate asks you to “look at” a draft before a meeting.</p>
-                <label class="choice-label draft-label" for="draft-text-clarify">Edit the example message</label>
-                <textarea id="draft-text-clarify" rows="5" spellcheck="true">I can look at the draft before the meeting. Would you like me to check the figures or give feedback on the recommendation?</textarea>
-                </div>
-                <div id="draft-priorities" class="example-output">
-                  <h5>Ask which deadline takes precedence</h5>
-                  <p>Your manager adds a new task while you are finishing a client summary.</p>
-                <label class="choice-label draft-label" for="draft-text-priorities">Edit the example message</label>
-                <textarea id="draft-text-priorities" rows="5" spellcheck="true">I am finishing the client summary this morning. If the slide deck needs to come first, I can move the summary to tomorrow. Which should I prioritise?</textarea>
-                </div>
-                <div id="draft-adjust" class="example-output">
-                  <h5>Suggest a specific trial</h5>
-                  <p>Switching between chat messages and analysis makes it hard to keep track of what you have checked.</p>
-                <label class="choice-label draft-label" for="draft-text-adjust">Edit the example message</label>
-                <textarea id="draft-text-adjust" rows="5" spellcheck="true">Could I try two uninterrupted mornings for the analysis next week? I can check messages at midday, and the team can call if something is urgent. Could we review how it worked on Friday?</textarea>
-                </div>
-                <div id="draft-meeting" class="example-output">
-                  <h5>Ask for the information you need</h5>
-                  <p>You would like to consider the options before a decision meeting.</p>
-                <label class="choice-label draft-label" for="draft-text-meeting">Edit the example message</label>
-                <textarea id="draft-text-meeting" rows="5" spellcheck="true">Could you send the options and the decision we need to make before Thursday? I would like to check the figures and bring my questions.</textarea>
-                </div>
-                <div id="draft-deadline" class="example-output">
-                  <h5>Offer a deliverable and a realistic date</h5>
-                  <p>One source has arrived late, leaving less time to check the full analysis.</p>
-                <label class="choice-label draft-label" for="draft-text-deadline">Edit the example message</label>
-                <textarea id="draft-text-deadline" rows="5" spellcheck="true">I can send the checked figures by 15:00 today. With the new file, the commentary will be ready tomorrow morning. Would you prefer the figures today or the complete paper tomorrow?</textarea>
-                </div>
-                <div id="draft-followup" class="example-output">
-                  <h5>Put the next action in writing</h5>
-                  <p>You and a colleague have agreed a handover in a call.</p>
-                <label class="choice-label draft-label" for="draft-text-followup">Edit the example message</label>
-                <textarea id="draft-text-followup" rows="5" spellcheck="true">My understanding is that I will send the figures by Thursday at 10:00 and you will add the commentary before Friday. Have I captured that correctly?</textarea>
-                </div>
-              </div>
-            </section>
-            <section id="topic-preferences" class="topic-panel" aria-labelledby="topic-preferences-title">
-              <h4 id="topic-preferences-title">Choose what a colleague needs to know</h4>
-              <p>You are joining a project team. Choose which example preferences you would include in a note to the project lead.</p>
-              <fieldset class="preference-options" hidden><legend>Include in the example note</legend><label><input type="checkbox" value="pref-communication" checked><span>Communication</span></label><label><input type="checkbox" value="pref-meetings"><span>Meetings</span></label><label><input type="checkbox" value="pref-focus"><span>Focus and environment</span></label><label><input type="checkbox" value="pref-support"><span>Support that helps</span></label></fieldset>
-              <div class="preference-note example-output">
-              <h5>My working preferences</h5>
-              <ul aria-live="polite"><li id="pref-communication">When a deadline changes, please update the written brief so I can plan from the latest date.</li><li id="pref-meetings">I can give a more considered answer if I have the decision questions before the meeting.</li><li id="pref-focus">For concentrated work, a quiet hour helps. If a question is urgent, please call instead of messaging.</li><li id="pref-support">When priorities change, a short check-in helps me agree what can move.</li><li class="empty-pref" hidden>Select a preference to include it in the note.</li></ul>
-              </div>
-            </section>
+              <details><summary><img class="tool-icon" src="/assets/brand/tasks.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Tasks and timetable<small>Turn a task into a plan.</small></span></summary><p>Write your own steps or ask AI to suggest them. Schedule the work, track time spent and choose when to carry unfinished steps forward.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/energy.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Energy<small>Find the times that work for you.</small></span></summary><p>Use check-ins to learn your energy patterns, including differences between weekdays and weekends, and use those insights when planning.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/communication.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Communication<small>Prepare what you want to say.</small></span></summary><p>Adapt a message template, save a private draft or ask AI to suggest a rewrite. Use working preferences to explain what helps you.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/guidance.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Workplace guidance<small>Find a practical next step.</small></span></summary><p>Explore guidance for situations such as workload overwhelm, unexpected change and asking for support.</p></details>
             </div>
           </div>
-
         </div>
       </section>
       <section class="workspace" id="managers" aria-labelledby="managers-title">
         <div class="workspace-grid">
           <div class="workspace-intro">
-            <h2 id="managers-title" tabindex="-1">Managers</h2>
-            <p class="role-summary">Prepare clearer requests and meetings. Try a team practice and review whether it helped.</p>
+            <div class="workspace-copy">
+            <p class="workspace-label">Team support</p>
+            <h2 id="managers-title" tabindex="-1">Manager workspace</h2>
+            <p class="role-summary">Prepare for conversations, agree practical changes and review what helps your team.</p>
+            <a class="button workspace-action" href="https://normall.vercel.app/login">Open normALL<span class="visually-hidden"> for managers</span></a>
+            <p class="access-note">Sign in to use the tools.</p>
+            </div>
+            <div class="workspace-art" aria-hidden="true"><img src="/assets/brand/manager.png" width="2103" height="2103" alt="" loading="lazy" decoding="async"></div>
           </div>
           <div class="workspace-tools">
-            <h3>Tools in this workspace</h3>
+            <h3>Explore the tools</h3><p class="tools-hint">Select a tool to learn more.</p>
             <div class="tool-list">
-              <details><summary>Team Resources</summary><p>Find guidance on meetings, feedback, and working agreements. Adapt a template to spell out the outcome you need, its priority, the deadline, and where questions can go.</p></details>
-<details><summary>Team Practices</summary><p>Create a private plan for a change, such as circulating the decisions needed before a meeting. Record what you will try, when you will review it, and how you will judge whether it helped.</p></details>
-<details><summary>Review history</summary><p>Keep a record of each review, including the reason for continuing, adapting, or pausing a practice. Revisit earlier decisions when planning the next trial.</p></details>
-            </div>
-            <a class="role-demo" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry%20%7C%20Managers">Request a demo of this workspace</a>
-          </div>
-          <div class="preview">
-            <p class="preview-label">Interactive example</p>
-            <h3>Review a meeting-agenda trial</h3>
-            <p class="preview-intro">For two meetings, the chair has circulated the decisions in advance and invited written input. Choose a review outcome to see an example of what a manager could record.</p>
-            <div class="choice" hidden>
-              <label class="choice-label" for="managers-choice">Review outcome</label>
-              <select id="managers-choice" aria-controls="managers-examples"><option value="managers-continue">Continue</option><option value="managers-adapt">Adapt</option><option value="managers-pause">Pause</option></select>
-            </div>
-            <div aria-live="polite" id="managers-examples">
-              <div id="managers-continue" class="example-output"><h4>Keep the practice in use</h4><p><strong>Review note.</strong> The agenda gave people time to check the figures. Written comments arrived before both meetings.</p>
-<p><strong>Next action.</strong> Keep the format for the next month and agree a date to review it again.</p></div>
-<div id="managers-adapt" class="example-output"><h4>Change the trial</h4><p><strong>Review note.</strong> Advance notice helped, but sending the agenda on the morning of the meeting left little time to respond.</p>
-<p><strong>Next action.</strong> Send the decision questions the previous working day. Review after two more meetings.</p></div>
-<div id="managers-pause" class="example-output"><h4>Pause and record why</h4><p><strong>Review note.</strong> The team now makes this decision in a shared document, and the recurring meeting has been cancelled.</p>
-<p><strong>Next action.</strong> Pause the meeting trial and keep the review note for future reference.</p></div>
+              <details><summary><img class="tool-icon" src="/assets/brand/learning.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Team resources<small>Prepare for everyday management.</small></span></summary><p>Find guidance and editable templates for meetings, feedback and working agreements.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/meetings.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Team practices<small>Agree a change to try.</small></span></summary><p>Make a private plan for a working practice. Record what you will try, when to review it and how you will judge whether it helped.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/review.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Review history<small>Keep track of what helps.</small></span></summary><p>Record why you continued, adapted or paused a practice, and revisit earlier decisions before the next trial.</p></details>
             </div>
           </div>
         </div>
@@ -281,30 +86,21 @@
       <section class="workspace" id="colleagues" aria-labelledby="colleagues-title">
         <div class="workspace-grid">
           <div class="workspace-intro">
-            <h2 id="colleagues-title" tabindex="-1">Colleagues</h2>
-            <p class="role-summary">Clarify requests and find practical ways to work with your colleagues.</p>
+            <div class="workspace-copy">
+            <p class="workspace-label">Working well together</p>
+            <h2 id="colleagues-title" tabindex="-1">Colleague workspace</h2>
+            <p class="role-summary">Clarify a request, prepare a message and find ways of working that suit the people around you.</p>
+            <a class="button workspace-action" href="https://normall.vercel.app/login">Open normALL<span class="visually-hidden"> for colleagues</span></a>
+            <p class="access-note">Sign in to use the tools.</p>
+            </div>
+            <div class="workspace-art" aria-hidden="true"><img src="/assets/brand/colleague.png" width="2103" height="2103" alt="" loading="lazy" decoding="async"></div>
           </div>
           <div class="workspace-tools">
-            <h3>Tools in this workspace</h3>
+            <h3>Explore the tools</h3><p class="tools-hint">Select a tool to learn more.</p>
             <div class="tool-list">
-              <details><summary>Situation guides</summary><p>Start with a situation you recognise, such as an unclear handover. Find practical wording, bookmark a guide, and record a private next action.</p></details>
-<details><summary>Communication templates</summary><p>Adapt the wording to the recipient and what you need from them. Save a draft, then copy or download the version you want to use.</p></details>
-<details><summary>Practice plans and learning</summary><p>Choose a change to try, set a trial date, and record what happened. Short learning modules let you compare possible responses to a workplace situation.</p></details>
-            </div>
-            <a class="role-demo" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry%20%7C%20Colleagues">Request a demo of this workspace</a>
-          </div>
-          <div class="preview">
-            <p class="preview-label">Interactive example</p>
-            <h3>Clarify a request from a teammate</h3>
-            <p class="preview-intro">A teammate writes, “Could you look at this before the meeting?” Choose what you need to clarify to see how you might reply.</p>
-            <div class="choice" hidden>
-              <label class="choice-label" for="colleagues-choice">What information is missing?</label>
-              <select id="colleagues-choice" aria-controls="colleagues-examples"><option value="colleagues-scope">The type of feedback</option><option value="colleagues-deadline">The deadline</option><option value="colleagues-priority">The priority</option></select>
-            </div>
-            <div aria-live="polite" id="colleagues-examples">
-              <div id="colleagues-scope" class="example-output"><h4>Clarify the scope</h4><p>“I can review it. Would you like me to check the figures, comment on the recommendation, or proofread the text?”</p></div>
-<div id="colleagues-deadline" class="example-output"><h4>Agree a time</h4><p>“What time would you like my comments? I can send notes by 14:00, or flag the main question sooner if you need it for the meeting.”</p></div>
-<div id="colleagues-priority" class="example-output"><h4>Make the trade-off explicit</h4><p>“I am finishing the client summary this morning. Which would you like me to prioritise if there is only time for one before the meeting?”</p></div>
+              <details><summary><img class="tool-icon" src="/assets/brand/guidance.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Situation guides<small>Work through a familiar challenge.</small></span></summary><p>Find practical wording for situations such as an unclear handover. Bookmark useful guidance and record a private next action.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/communication.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Communication templates<small>Start with wording you can adapt.</small></span></summary><p>Prepare a message for the recipient and what you need from them. Save a draft, then copy or download your version.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/learning.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Practice and learning<small>Try a different way of working.</small></span></summary><p>Plan a small change and record what happened. Short learning modules help you consider different responses to workplace situations.</p></details>
             </div>
           </div>
         </div>
@@ -312,39 +108,21 @@
       <section class="workspace" id="hr" aria-labelledby="hr-title">
         <div class="workspace-grid">
           <div class="workspace-intro">
-            <h2 id="hr-title" tabindex="-1">HR and People teams</h2>
-            <p class="role-summary">Prepare policies, hiring materials and workplace changes for organisational review.</p>
+            <div class="workspace-copy">
+            <p class="workspace-label">Policy and practice</p>
+            <h2 id="hr-title" tabindex="-1">HR workspace</h2>
+            <p class="role-summary">Develop policies, prepare inclusive hiring and plan changes your organisation can review.</p>
+            <a class="button workspace-action" href="https://normall.vercel.app/login">Open normALL<span class="visually-hidden"> for HR and People teams</span></a>
+            <p class="access-note">Sign in to use the tools.</p>
+            </div>
+            <div class="workspace-art" aria-hidden="true"><img src="/assets/brand/hr.png" width="2103" height="2103" alt="" loading="lazy" decoding="async"></div>
           </div>
           <div class="workspace-tools">
-            <h3>Tools in this workspace</h3>
+            <h3>Explore the tools</h3><p class="tools-hint">Select a tool to learn more.</p>
             <div class="tool-list">
-              <details><summary>Policies and guidance</summary><p>Start with a policy template or workplace support guide. Adapt the wording to your organisation, keep a private draft, and export it for review.</p></details>
-<details><summary>Inclusive hiring packs</summary><p>Prepare six stages, from the role brief to onboarding handover. Check each section and export the parts your recruiting team needs.</p></details>
-<details><summary>Change plans</summary><p>Record an objective, owner role, actions, and evidence. At review, document what happened and whether the change should continue, be adapted, or pause.</p></details>
-            </div>
-            <a class="role-demo" href="mailto:lavinia@normall.io?subject=normALL%20demo%20enquiry%20%7C%20HR%20and%20People%20teams">Request a demo of this workspace</a>
-          </div>
-          <div class="preview">
-            <p class="preview-label">Interactive example</p>
-            <h3>Build an inclusive hiring pack</h3>
-            <p class="preview-intro">A hiring team is preparing to recruit an analyst. Explore the six parts of its example pack to see what the team could agree before a candidate reaches each stage.</p>
-            <div class="choice" hidden>
-              <label class="choice-label" for="hr-choice">Hiring pack stage</label>
-              <select id="hr-choice" aria-controls="hr-examples"><option value="hr-brief">Role brief</option><option value="hr-communication">Candidate communication</option><option value="hr-interview">Interview structure</option><option value="hr-assessment">Assessment instructions</option><option value="hr-support">Support-request route</option><option value="hr-onboarding">Onboarding handover</option></select>
-            </div>
-            <div aria-live="polite" id="hr-examples">
-              <div id="hr-brief" class="example-output"><h4>Define the work</h4><p><strong>Example.</strong> The analyst will compare monthly results and explain the main changes in a written briefing.</p>
-<p><strong>Preparation check.</strong> Confirm which skills are essential on day one and which can be learned in the role.</p></div>
-<div id="hr-communication" class="example-output"><h4>Set expectations</h4><p><strong>Example.</strong> The invitation gives the interview length, format, names of the panel members, and time set aside for questions.</p>
-<p><strong>Preparation check.</strong> Make sure the invitation and calendar entry give the same timings.</p></div>
-<div id="hr-interview" class="example-output"><h4>Agree how evidence will be gathered</h4><p><strong>Example.</strong> Each candidate receives the same core question about interpreting a dataset. The panel agrees what evidence to look for before interviews begin.</p>
-<p><strong>Preparation check.</strong> Give each panel member the questions, scoring guidance, and their role in the discussion.</p></div>
-<div id="hr-assessment" class="example-output"><h4>Describe the expected output</h4><p><strong>Example.</strong> Review a short dataset and submit a one-page summary of two findings. The brief states how long to spend and which tools may be used.</p>
-<p><strong>Preparation check.</strong> Ask someone unfamiliar with the task to identify the output, time allowance, and submission route from the brief.</p></div>
-<div id="hr-support" class="example-output"><h4>Name a point of contact</h4><p><strong>Example.</strong> The invitation names a recruiting contact for candidates who want to discuss a change to the interview or assessment format.</p>
-<p><strong>Preparation check.</strong> Agree who monitors the route, who follows up, and what the panel needs to know.</p></div>
-<div id="hr-onboarding" class="example-output"><h4>Prepare for the first week</h4><p><strong>Example.</strong> The recruiting lead and line manager agree who will send the first-week schedule, equipment details, and the name of a contact for questions.</p>
-<p><strong>Preparation check.</strong> Confirm with the incoming colleague what information they want passed on and to whom.</p></div>
+              <details><summary><img class="tool-icon" src="/assets/brand/policies.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Policies and support<small>Adapt guidance to your organisation.</small></span></summary><p>Start with policy templates and workplace support guides. Keep a private draft and export it for review.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/colleague.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Inclusive hiring<small>Prepare each stage of recruitment.</small></span></summary><p>Build a hiring pack from the role brief through to onboarding handover. Review and export the sections your team needs.</p></details>
+              <details><summary><img class="tool-icon" src="/assets/brand/strategy.png" width="4688" height="4688" alt="" loading="lazy" decoding="async"><span>Change plans<small>Follow a change through to review.</small></span></summary><p>Record the objective, owner role, actions and evidence. Review what happened before deciding whether to continue, adapt or pause.</p></details>
             </div>
           </div>
         </div>
