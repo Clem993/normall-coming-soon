@@ -169,7 +169,22 @@ test('each overview has one explicit application action and short opening copy',
 test('public pages retain the approved light background and load current styles', () => {
   for (const file of pages) assert.match(html(file), /minimal\.css\?v=3/);
   assert.match(html('minimal.css'), /background: #fcfcfa;/);
-  assert.match(html('workspaces/index.html'), /explorer\.css\?v=11/);
+  assert.match(html('workspaces/index.html'), /explorer\.css\?v=12/);
+});
+
+test('expanded tool cards share the workspace header tint while closed cards stay off-white', () => {
+  const css = html('workspaces/explorer.css');
+  const colours = { '.workspace': '#e8f3f4', '#managers': '#fff0e5', '#colleagues': '#e7f0f7', '#hr': '#fff4df' };
+  for (const [selector, colour] of Object.entries(colours)) {
+    assert.ok(css.includes(`${selector} { --workspace-tint: ${colour}; }`));
+  }
+  const intro = css.match(/^\.workspace-intro \{([^}]+)\}/m)[1];
+  assert.match(intro, /background: var\(--workspace-tint\);/);
+  assert.match(css, /\.tool-list details\[open\] \{ background: var\(--workspace-tint\); \}/);
+  assert.match(css, /\.tool-list details \{ background: #fcfcfa;/);
+  const hover = css.match(/\.tool-list summary:hover \{([^}]+)\}/)[1];
+  assert.doesNotMatch(hover, /background/);
+  assert.match(css, /\.tool-list summary:focus-visible/);
 });
 
 test('all tool cards stretch to a shared row height in closed and expanded states', () => {

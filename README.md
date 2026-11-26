@@ -18,13 +18,20 @@ Run `python3 -m http.server 4173 --bind 127.0.0.1` from this directory, then ope
 - The visual direction now uses original illustrations and icons rather than product screenshots. No application sign-in or private user data is needed for this preview. Do not describe these illustrations as application screenshots.
 - About retains its founder statement, with a smaller navy subheading, capitalised Founder attribution and secondary company details in the footer.
 - Workspace choices and introductions retain their brand colours without decorative border accents. The first workspace heading is Neurodivergent workspace; its existing deep link remains unchanged.
+- Expanded toolboxes share their workspace header's pale tint. Closed toolboxes remain off-white, including on hover; keyboard focus and plus/minus disclosure indicators are retained.
 - Legacy homepage links for the founder section and workspaces continue to their current destinations. The contact fragment now targets the footer.
 
 ## Checks
 
 Run `node --test tests/explorer.test.cjs` and `node --check workspaces/explorer.js`.
 
-The 24 automated checks cover homepage content, local links and assets, unique IDs, label targets, role selection, direct links, browser-history restoration, modified clicks, no-script content availability, removal of simulated controls, one application action per role, concise opening copy, stylesheet versions, brand imagery, accessible image attributes, border treatment, workspace naming, shared tool-card row sizing and About-page hierarchy and company details. Navigation tests use a small DOM test double; they do not replace browser testing.
+The 25 automated checks cover homepage content, local links and assets, unique IDs, label targets, role selection, direct links, browser-history restoration, modified clicks, no-script content availability, removal of simulated controls, one application action per role, concise opening copy, stylesheet versions, brand imagery, accessible image attributes, border treatment, workspace naming, shared tool-card row sizing, workspace-specific expanded colours and About-page hierarchy and company details. Navigation tests use a small DOM test double; they do not replace browser testing.
+
+Workspace toolbox colours, 26 November 2026:
+
+- Shared workspace colour variables keep expanded toolboxes identical to their header background, with no change to text or disclosure behaviour.
+- Forty-eight browser combinations passed across four workspaces, three widths (1446, 700 and 390 pixels), and closed, mixed, expanded and reclosed states. Colours matched the required state, row heights remained equal, and no clipping or horizontal overflow was observed.
+- The lowest measured text contrast across the tested toolbox colours was 5.43:1.
 
 Tool-panel height correction, 26 November 2026:
 
