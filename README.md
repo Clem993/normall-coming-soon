@@ -16,21 +16,29 @@ Run `python3 -m http.server 4173 --bind 127.0.0.1` from this directory, then ope
 - Demo requests remain mail links in the footer. No account-creation flow or signed-in application behaviour has changed.
 - The approved light background, #FCFCFA, is restored. Workspace introductions use teal, blue and warm orange colour treatments drawn from the existing brand. The homepage headline and introduction are unchanged.
 - The visual direction now uses original illustrations and icons rather than product screenshots. No application sign-in or private user data is needed for this preview. Do not describe these illustrations as application screenshots.
-- About retains its existing founder and company text, with navigation matching the new presentation.
+- About retains its founder statement, with a smaller navy subheading, capitalised Founder attribution and secondary company details in the footer.
+- Workspace choices and introductions retain their brand colours without decorative border accents. The first workspace heading is Neurodivergent workspace; its existing deep link remains unchanged.
 - Legacy homepage links for the founder section and workspaces continue to their current destinations. The contact fragment now targets the footer.
 
 ## Checks
 
 Run `node --test tests/explorer.test.cjs` and `node --check workspaces/explorer.js`.
 
-The 19 automated checks cover homepage content, local links and assets, unique IDs, label targets, role selection, direct links, browser-history restoration, modified clicks, no-script content availability, removal of simulated controls, one application action per role, concise opening copy, stylesheet versions, brand imagery and accessible image attributes. Navigation tests use a small DOM test double; they do not replace browser testing.
+The 23 automated checks cover homepage content, local links and assets, unique IDs, label targets, role selection, direct links, browser-history restoration, modified clicks, no-script content availability, removal of simulated controls, one application action per role, concise opening copy, stylesheet versions, brand imagery, accessible image attributes, border treatment, workspace naming and About-page hierarchy and company details. Navigation tests use a small DOM test double; they do not replace browser testing.
+
+Browser checks for the approved refinements, 26 November 2026:
+
+- Border removal on all four workspace introductions and the chooser, with the existing selection and keyboard-focus indicators preserved.
+- Neurodivergent workspace naming and unchanged role links.
+- About-page heading hierarchy and navy colour at 1446-, 768-, 390- and 320-pixel widths; company details remain 12-pixel secondary text.
+- The earlier panel-height audit found unequal tool panels where text wraps in Professional, Colleague and HR layouts. This publication does not include a panel-height correction.
 
 Browser checks for the branded workspace revision, 25 November 2026:
 
 - All four role selections, selected-heading focus, return to the chooser, and browser back and forward.
 - Native tool descriptions opened and closed with Enter.
 - All four roles at 768-, 390- and 320-pixel widths, with no horizontal overflow; desktop compositions inspected visually.
-- Workspace illustrations and tool icons use existing normALL assets. The revision has not been published.
+- Workspace illustrations and tool icons use existing normALL assets. This revision was reviewed locally before publication.
 
 Historical checks for the preceding release, 24 November 2026:
 
@@ -45,4 +53,4 @@ The development browser reported an extension-style asynchronous-message-channel
 
 ## Release
 
-The preceding minimalist homepage release was merged at e32e5a56c0bcbe71b3f9bf60837a69b7645e5ca0. The text-led workspace preview was rejected. This replacement is a local preview on codex/branded-workspace-preview. Do not merge or publish this revision until it has been reviewed. The deployment target and existing CNAME remain unchanged.
+The preceding minimalist homepage release was merged at e32e5a56c0bcbe71b3f9bf60837a69b7645e5ca0. The text-led workspace preview was rejected. The replacement branded preview and subsequent refinements on codex/branded-workspace-preview were approved for publication on 26 November 2026. The deployment target and existing CNAME remain unchanged. Confirm the GitHub Pages deployment and live pages before reporting publication as complete.
