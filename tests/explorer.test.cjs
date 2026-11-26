@@ -169,7 +169,16 @@ test('each overview has one explicit application action and short opening copy',
 test('public pages retain the approved light background and load current styles', () => {
   for (const file of pages) assert.match(html(file), /minimal\.css\?v=3/);
   assert.match(html('minimal.css'), /background: #fcfcfa;/);
-  assert.match(html('workspaces/index.html'), /explorer\.css\?v=10/);
+  assert.match(html('workspaces/index.html'), /explorer\.css\?v=11/);
+});
+
+test('all tool cards stretch to a shared row height in closed and expanded states', () => {
+  const css = html('workspaces/explorer.css');
+  const grid = css.match(/^\.tool-list \{([^}]+)\}/m)[1];
+  assert.match(grid, /align-items: stretch;/);
+  assert.doesNotMatch(grid, /align-items: start;/);
+  assert.match(css, /\.tool-list details:not\(\[open\]\) > summary \{ height: 100%; \}/);
+  assert.doesNotMatch(css, /\.tool-list details\[open\]\s*\{[^}]*\b(?:height|max-height):/);
 });
 
 test('workspace choices and introductions retain colour without decorative borders', () => {
