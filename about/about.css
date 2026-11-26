@@ -1,0 +1,13 @@
+/* Company registration information is secondary footer content. */
+.about footer { margin-top: clamp(3rem, 7vw, 6rem); }
+.about footer .company {
+  padding-top: 1.5rem;
+  padding-bottom: .5rem;
+  color: #52636a;
+  font-size: .75rem;
+  line-height: 1.7;
+}
+.about .company p { max-width: none; margin: 0; }
+.about .company p + p { margin-top: .25rem; }
+.about .company strong { font-weight: 600; }
+.about footer .footer-inner { min-height: 4.5rem; }

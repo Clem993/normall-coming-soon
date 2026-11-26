@@ -76,6 +76,17 @@ test('no role is chosen on first arrival', () => {
   assert.equal(app.back.hidden, true);
 });
 
+test('About uses Founder and places smaller registration details in the footer', () => {
+  const page = html('about/index.html');
+  assert.match(page, /Lavinia Woodward, Founder of normALL/);
+  assert.match(page, /<footer>[\s\S]*id="company-details"[\s\S]*<\/footer>/);
+  assert.doesNotMatch(page.match(/<main[\s\S]*?<\/main>/)[0], /id="company-details"/);
+  assert.match(page, /about\/about\.css\?v=1/);
+  assert.match(html('about/about.css'), /font-size: \.75rem;/);
+  assert.match(page, /Company number 16856968/);
+  assert.match(page, /Registered office: 3rd Floor, 86–90 Paul Street, London, EC2A 4NE\./);
+});
+
 for (const id of roleIds) test(`${id}: direct link selects only the requested workspace`, () => {
   const app = navigation('#' + id);
   assert.deepEqual(app.visible(), [id]);
