@@ -26,12 +26,13 @@
 .back-to-chooser { display: inline-flex; align-items: center; min-height: 2.75rem; margin-top: .65rem; font-size: .9rem; }
 .fallback-note { margin-top: 1rem; color: #52636a; }
 .explorer .workspace { padding-block: 1.1rem 3rem; scroll-margin-top: 1rem; }
+.workspace { --workspace-tint: #e8f3f4; }
+#managers { --workspace-tint: #fff0e5; }
+#colleagues { --workspace-tint: #e7f0f7; }
+#hr { --workspace-tint: #fff4df; }
 .workspace + .workspace:not([hidden]) { border-top: 1px solid var(--line); }
 .workspace-grid { display: block; }
-.workspace-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, .6fr); align-items: center; gap: 2rem; padding: clamp(1.5rem, 3.5vw, 3rem); background: #e8f3f4; border: 0; }
-#managers .workspace-intro { background: #fff0e5; }
-#colleagues .workspace-intro { background: #e7f0f7; }
-#hr .workspace-intro { background: #fff4df; }
+.workspace-intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(12rem, .6fr); align-items: center; gap: 2rem; padding: clamp(1.5rem, 3.5vw, 3rem); background: var(--workspace-tint); border: 0; }
 .workspace-label { margin-bottom: .65rem; color: #52636a; font-size: .9rem; font-weight: 550; }
 .explorer .workspace h2 { font: 600 clamp(1.8rem, 1.5rem + 1.3vw, 2.7rem)/1.2 var(--heading); letter-spacing: -.035em; color: var(--deep); text-wrap: initial; }
 .explorer .role-summary { max-width: 47ch; font-size: 1.08rem; line-height: 1.7; color: #3b555f; margin-top: 1rem; }
@@ -46,7 +47,7 @@
 /* Stretch each card to the tallest content in its row, including open details. */
 .tool-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; margin-top: 1.2rem; border-top: 1px solid #ccd9dc; }
 #professionals .tool-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.tool-list details { border-bottom: 1px solid #ccd9dc; }
+.tool-list details { background: #fcfcfa; border-bottom: 1px solid #ccd9dc; }
 .tool-list details + details { border-left: 1px solid #ccd9dc; }
 .tool-list summary { display: block; position: relative; padding: 1.25rem 1.25rem 1.4rem; min-height: 13.6rem; cursor: pointer; list-style: none; font: 600 1.15rem/1.4 var(--heading); color: var(--deep); }
 .tool-list details:not([open]) > summary { height: 100%; }
@@ -54,10 +55,10 @@
 .tool-icon { display: block; width: 4rem; height: 4rem; object-fit: contain; margin-bottom: 1rem; }
 .tool-list summary::after { content: ""; position: absolute; top: 1.5rem; right: 1.25rem; width: .8rem; height: .8rem; background: linear-gradient(#00527c, #00527c) center / 100% 2px no-repeat, linear-gradient(#00527c, #00527c) center / 2px 100% no-repeat; }
 .tool-list details[open] summary::after { background-size: 100% 2px, 0 0; }
-.tool-list summary:hover { background: #edf6f5; }
+.tool-list summary:hover { color: var(--blue); }
 .tool-list summary small { display: block; margin-top: .4rem; color: #52636a; font: 400 1rem/1.6 Inter, Arial, sans-serif; letter-spacing: 0; }
 .tool-list details p { margin: 0; padding: 0 1.25rem 1.4rem; color: #3b555f; font-size: 1rem; line-height: 1.7; }
-.tool-list details[open] { background: #edf6f5; }
+.tool-list details[open] { background: var(--workspace-tint); }
 .tool-list summary:focus-visible { outline-offset: -3px; }
 @media (max-width: 58rem) {
   .workspace-choices a { gap: 1rem; padding: 1.3rem; }
