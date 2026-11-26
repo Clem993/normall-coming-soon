@@ -43,11 +43,13 @@
 .workspace-tools { padding-top: 2.2rem; }
 .workspace-tools > h3 { font: 600 1.3rem/1.4 var(--heading); color: var(--deep); }
 .tools-hint { color: #52636a; font-size: .95rem; margin-top: .35rem; }
-.tool-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; margin-top: 1.2rem; border-top: 1px solid #ccd9dc; }
+/* Stretch each card to the tallest content in its row, including open details. */
+.tool-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; margin-top: 1.2rem; border-top: 1px solid #ccd9dc; }
 #professionals .tool-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .tool-list details { border-bottom: 1px solid #ccd9dc; }
 .tool-list details + details { border-left: 1px solid #ccd9dc; }
 .tool-list summary { display: block; position: relative; padding: 1.25rem 1.25rem 1.4rem; min-height: 13.6rem; cursor: pointer; list-style: none; font: 600 1.15rem/1.4 var(--heading); color: var(--deep); }
+.tool-list details:not([open]) > summary { height: 100%; }
 .tool-list summary::-webkit-details-marker { display: none; }
 .tool-icon { display: block; width: 4rem; height: 4rem; object-fit: contain; margin-bottom: 1rem; }
 .tool-list summary::after { content: ""; position: absolute; top: 1.5rem; right: 1.25rem; width: .8rem; height: .8rem; background: linear-gradient(#00527c, #00527c) center / 100% 2px no-repeat, linear-gradient(#00527c, #00527c) center / 2px 100% no-repeat; }

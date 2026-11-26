@@ -24,14 +24,20 @@ Run `python3 -m http.server 4173 --bind 127.0.0.1` from this directory, then ope
 
 Run `node --test tests/explorer.test.cjs` and `node --check workspaces/explorer.js`.
 
-The 23 automated checks cover homepage content, local links and assets, unique IDs, label targets, role selection, direct links, browser-history restoration, modified clicks, no-script content availability, removal of simulated controls, one application action per role, concise opening copy, stylesheet versions, brand imagery, accessible image attributes, border treatment, workspace naming and About-page hierarchy and company details. Navigation tests use a small DOM test double; they do not replace browser testing.
+The 24 automated checks cover homepage content, local links and assets, unique IDs, label targets, role selection, direct links, browser-history restoration, modified clicks, no-script content availability, removal of simulated controls, one application action per role, concise opening copy, stylesheet versions, brand imagery, accessible image attributes, border treatment, workspace naming, shared tool-card row sizing and About-page hierarchy and company details. Navigation tests use a small DOM test double; they do not replace browser testing.
+
+Tool-panel height correction, 26 November 2026:
+
+- Each card stretches to the tallest card in its own grid row, including when descriptions are expanded. Closed summaries fill the available card height so their clickable area and focus treatment stay aligned.
+- Native disclosure behaviour, keyboard activation and content are unchanged. Single-column mobile cards retain natural content heights.
+- Browser geometry checks passed for all four workspaces at 1446, 1024, 768, 700, 390 and 320 pixels, with all cards closed, only the first open, only the last open and all open: 96 combinations. No unequal same-row heights, clipped content or horizontal overflow were observed.
 
 Browser checks for the approved refinements, 26 November 2026:
 
 - Border removal on all four workspace introductions and the chooser, with the existing selection and keyboard-focus indicators preserved.
 - Neurodivergent workspace naming and unchanged role links.
 - About-page heading hierarchy and navy colour at 1446-, 768-, 390- and 320-pixel widths; company details remain 12-pixel secondary text.
-- The earlier panel-height audit found unequal tool panels where text wraps in Professional, Colleague and HR layouts. This publication does not include a panel-height correction.
+- The earlier panel-height audit found unequal tool panels where text wraps. This is addressed by the subsequent tool-panel height correction above.
 
 Browser checks for the branded workspace revision, 25 November 2026:
 
@@ -53,4 +59,4 @@ The development browser reported an extension-style asynchronous-message-channel
 
 ## Release
 
-The preceding minimalist homepage release was merged at e32e5a56c0bcbe71b3f9bf60837a69b7645e5ca0. The text-led workspace preview was rejected. The replacement branded preview and subsequent refinements on codex/branded-workspace-preview were approved for publication on 26 November 2026. The deployment target and existing CNAME remain unchanged. Confirm the GitHub Pages deployment and live pages before reporting publication as complete.
+The preceding minimalist homepage release was merged at e32e5a56c0bcbe71b3f9bf60837a69b7645e5ca0. The text-led workspace preview was rejected. The replacement branded preview and subsequent refinements were published through PR #4 at 291eeb5138019ce1810108664cc0629f354c975e on 26 November 2026. The tool-panel height correction is a follow-up to that release. The deployment target and existing CNAME remain unchanged. Confirm the GitHub Pages deployment and live pages before reporting publication as complete.
