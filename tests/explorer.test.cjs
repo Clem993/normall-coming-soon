@@ -157,7 +157,26 @@ test('each overview has one explicit application action and short opening copy',
 test('public pages retain the approved light background and load current styles', () => {
   for (const file of pages) assert.match(html(file), /minimal\.css\?v=3/);
   assert.match(html('minimal.css'), /background: #fcfcfa;/);
-  assert.match(html('workspaces/index.html'), /explorer\.css\?v=9/);
+  assert.match(html('workspaces/index.html'), /explorer\.css\?v=10/);
+});
+
+test('workspace choices and introductions retain colour without decorative borders', () => {
+  const css = html('workspaces/explorer.css');
+  const choices = css.match(/^\.workspace-choices a \{([^}]+)\}/m)[1];
+  const intro = css.match(/^\.workspace-intro \{([^}]+)\}/m)[1];
+  assert.match(choices, /border: 0;/);
+  assert.match(intro, /border: 0;/);
+  assert.doesNotMatch(css, /border-bottom: [23]px|border-left: 4px/);
+  assert.match(css, /\.has-selection \.workspace-choices \[aria-current\] \{ background: #e8f3f4; \}/);
+  assert.match(css, /\.workspace-choices a:focus-visible/);
+});
+
+test('the Neurodivergent workspace keeps its existing deep link and specific accessible action', () => {
+  const page = html('workspaces/index.html');
+  assert.match(page, /<h2 id="professionals-title" tabindex="-1">Neurodivergent workspace<\/h2>/);
+  assert.match(page, /href="#professionals"/);
+  assert.match(page, /for neurodivergent professionals<\/span>/);
+  assert.doesNotMatch(page, />Professional workspace</);
 });
 
 test('every workspace has its original brand illustration and illustrated tool descriptions', () => {
