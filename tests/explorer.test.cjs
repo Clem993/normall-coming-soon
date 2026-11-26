@@ -81,10 +81,22 @@ test('About uses Founder and places smaller registration details in the footer',
   assert.match(page, /Lavinia Woodward, Founder of normALL/);
   assert.match(page, /<footer>[\s\S]*id="company-details"[\s\S]*<\/footer>/);
   assert.doesNotMatch(page.match(/<main[\s\S]*?<\/main>/)[0], /id="company-details"/);
-  assert.match(page, /about\/about\.css\?v=1/);
+  assert.match(page, /about\/about\.css\?v=2/);
   assert.match(html('about/about.css'), /font-size: \.75rem;/);
   assert.match(page, /Company number 16856968/);
   assert.match(page, /Registered office: 3rd Floor, 86–90 Paul Street, London, EC2A 4NE\./);
+});
+
+test('About keeps a smaller navy founder heading below the main page title', () => {
+  const page = html('about/index.html');
+  const css = html('about/about.css');
+  assert.match(page, /<h1 id="headline">About normALL<\/h1>/);
+  assert.match(page, /<h2 class="section-title" id="founder-title">Why I built normALL<\/h2>/);
+  const heading = css.match(/\.about \.founder \.section-title \{([^}]+)\}/)[1];
+  assert.match(heading, /color: var\(--deep\);/);
+  assert.match(heading, /font-size: clamp\(1\.5rem, 1\.3rem \+ \.5vw, 1\.875rem\);/);
+  assert.match(heading, /font-weight: 600;/);
+  assert.match(css, /\.about \.founder \{ padding-top: clamp\(1rem, 2vw, 2rem\); \}/);
 });
 
 for (const id of roleIds) test(`${id}: direct link selects only the requested workspace`, () => {
